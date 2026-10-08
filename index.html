@@ -1,30 +1,309 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>meixner.club</title>
-  <style>
-    :root { --bg: #f7f5f0; --text: #1f1f1f; --muted: #6b6b6b; --accent: #2f6f4f; }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #161616; --text: #eeeeee; --muted: #a0a0a0; --accent: #7cc39e; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jan Meixner · IT-Systemadministrator</title>
+<meta name="description" content="Jan Meixner, IT-Systemadministrator aus Kirchzell. Microsoft 365, Entra ID, IT-Service-Management und KI im Arbeitsalltag.">
+<meta property="og:title" content="Jan Meixner">
+<meta property="og:description" content="IT-Systemadministrator aus Kirchzell in Bayern.">
+<meta property="og:url" content="https://meixner.club/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233a4fe0'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+  /* Layout: schwebende Glas-Navigation, großer Hero mit weich treibenden Farbflächen, Abschnitte als Glaskarten mit sanftem Einblenden */
+  :root {
+    --bg: #f2f4f8;
+    --surface: rgba(255,255,255,.66);
+    --surface-solid: #ffffff;
+    --fg: #121a26;
+    --muted: #5a6779;
+    --line: rgba(18,26,38,.10);
+    --accent: #3a4fe0;
+    --accent-2: #12a6b8;
+    --glow-1: rgba(58,79,224,.30);
+    --glow-2: rgba(18,166,184,.26);
+    --glow-3: rgba(140,92,240,.20);
+    --ph: #c26a12;
+    --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1018; --surface: rgba(24,32,46,.62); --surface-solid: #161e2b;
+      --fg: #eaf0f7; --muted: #9babbd; --line: rgba(234,240,247,.10);
+      --accent: #8b9bff; --accent-2: #4fd3e0;
+      --glow-1: rgba(90,110,255,.30); --glow-2: rgba(40,190,210,.20); --glow-3: rgba(150,100,255,.22);
+      --ph: #f0a65e; color-scheme: dark;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-      background: var(--bg); color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 16px;
-    }
-    main { max-width: 36rem; text-align: center; }
-    h1 { font-size: clamp(2rem, 6vw, 3.25rem); margin: 0 0 .5rem; letter-spacing: -.02em; }
-    h1 span { color: var(--accent); }
-    p { color: var(--muted); font-size: 1.1rem; line-height: 1.6; margin: 0; }
-  </style>
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1018; --surface: rgba(24,32,46,.62); --surface-solid: #161e2b;
+    --fg: #eaf0f7; --muted: #9babbd; --line: rgba(234,240,247,.10);
+    --accent: #8b9bff; --accent-2: #4fd3e0;
+    --glow-1: rgba(90,110,255,.30); --glow-2: rgba(40,190,210,.20); --glow-3: rgba(150,100,255,.22);
+    --ph: #f0a65e; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font: 400 1.0625rem/1.65 var(--font-body);
+    padding-inline: 16px; padding-block: 0;
+    overflow-x: hidden;
+    transition: background-color .5s var(--ease), color .5s var(--ease);
+  }
+
+  /* treibende Farbflächen im Hintergrund */
+  .aura { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .aura span { position: absolute; border-radius: 50%; filter: blur(70px); will-change: transform; }
+  .aura .a { width: 42vmax; height: 42vmax; background: var(--glow-1); top: -14vmax; left: -10vmax; animation: drift1 22s ease-in-out infinite alternate; }
+  .aura .b { width: 36vmax; height: 36vmax; background: var(--glow-2); top: 8vmax; right: -14vmax; animation: drift2 26s ease-in-out infinite alternate; }
+  .aura .c { width: 30vmax; height: 30vmax; background: var(--glow-3); bottom: -12vmax; left: 20vmax; animation: drift3 30s ease-in-out infinite alternate; }
+  @keyframes drift1 { to { transform: translate(12vmax, 8vmax) scale(1.1); } }
+  @keyframes drift2 { to { transform: translate(-10vmax, 12vmax) scale(.9); } }
+  @keyframes drift3 { to { transform: translate(-8vmax, -10vmax) scale(1.15); } }
+
+  /* Navigation */
+  .nav {
+    position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); z-index: 10;
+    max-width: 52rem; margin: 12px auto 0;
+    display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+    padding: .5rem .5rem .5rem 1rem; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--line);
+    backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    animation: rise .8s var(--ease) both;
+  }
+  .brand { font: 800 1rem/1 var(--font-display); letter-spacing: -.02em; color: var(--fg); text-decoration: none; white-space: nowrap; }
+  .brand b { color: var(--accent); font-weight: 800; }
+  .links { display: flex; gap: .15rem; list-style: none; margin: 0; padding: 0; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .links a {
+    display: block; padding: .45rem .8rem; border-radius: 999px; white-space: nowrap;
+    color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 600;
+    transition: color .3s var(--ease), background-color .3s var(--ease);
+  }
+  .links a:hover { color: var(--fg); }
+  .links a.on { color: var(--fg); background: var(--surface-solid); box-shadow: 0 1px 6px rgba(0,0,0,.08); }
+  .theme {
+    flex: none; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1px solid var(--line);
+    background: var(--surface-solid); color: var(--fg); cursor: pointer; display: grid; place-items: center;
+    transition: transform .5s var(--ease);
+  }
+  .theme:hover { transform: rotate(25deg); }
+  @media (max-width: 36rem) { .links { display: none; } }
+
+  .wrap { position: relative; z-index: 1; max-width: 52rem; margin-inline: auto; padding-block: clamp(3rem, 9vw, 6rem) 2.5rem; display: grid; gap: clamp(1.25rem, 3vw, 1.75rem); }
+
+  .note {
+    font: 400 .78rem/1.5 var(--font-mono); color: var(--muted); margin: 0 0 1rem;
+    animation: rise .8s var(--ease) .05s both;
+  }
+  .ph { color: var(--ph); }
+
+  /* Hero */
+  .hero { display: grid; gap: 1.4rem; padding-bottom: clamp(1.5rem, 5vw, 3rem); }
+  .hero > * { animation: rise 1s var(--ease) both; }
+  .hero > :nth-child(1) { animation-delay: .1s; }
+  .hero > :nth-child(2) { animation-delay: .2s; }
+  .hero > :nth-child(3) { animation-delay: .32s; }
+  .hero > :nth-child(4) { animation-delay: .44s; }
+  .hero > :nth-child(5) { animation-delay: .56s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+
+  .status {
+    justify-self: start; display: inline-flex; align-items: center; gap: .55rem;
+    padding: .4rem .85rem; border-radius: 999px; font-size: .88rem; font-weight: 600;
+    background: var(--surface); border: 1px solid var(--line); backdrop-filter: blur(10px);
+  }
+  .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--accent-2); position: relative; }
+  .dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent-2); animation: ping 2.2s var(--ease) infinite; }
+  @keyframes ping { from { transform: scale(1); opacity: .7; } to { transform: scale(2.8); opacity: 0; } }
+
+  h1 {
+    font: 800 clamp(3rem, 12vw, 6.5rem)/.95 var(--font-display);
+    letter-spacing: -.045em; margin: 0; text-wrap: balance;
+  }
+  h1 .grad {
+    background: linear-gradient(100deg, var(--accent), var(--accent-2), var(--accent));
+    background-size: 220% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: sheen 8s ease-in-out infinite alternate;
+  }
+  @keyframes sheen { to { background-position: 100% 0; } }
+  .role { font: 500 clamp(1.2rem, 3.4vw, 1.6rem)/1.35 var(--font-display); margin: 0; max-width: 34ch; color: var(--muted); }
+  .role strong { color: var(--fg); font-weight: 600; }
+  .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .55rem;
+    padding: .8rem 1.3rem; border-radius: 999px; text-decoration: none;
+    font: 600 1rem/1 var(--font-body); color: var(--fg);
+    background: var(--surface); border: 1px solid var(--line); backdrop-filter: blur(10px);
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease), background-color .3s var(--ease);
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px -10px var(--glow-1); }
+  .btn.primary { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #fff; border-color: transparent; }
+  .btn .arrow { transition: transform .4s var(--ease); }
+  .btn:hover .arrow { transform: translateX(4px); }
+  .btn:focus-visible, .links a:focus-visible, .theme:focus-visible, .card a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* Karten */
+  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(1.25rem, 3vw, 1.75rem); }
+  .card {
+    grid-column: span 6; min-width: 0;
+    padding: clamp(1.4rem, 4vw, 2.2rem); border-radius: 1.5rem;
+    background: var(--surface); border: 1px solid var(--line);
+    backdrop-filter: blur(18px) saturate(1.3); -webkit-backdrop-filter: blur(18px) saturate(1.3);
+    transition: transform .6s var(--ease), box-shadow .6s var(--ease), border-color .4s var(--ease);
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -28px var(--glow-1); border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); }
+  @media (min-width: 46rem) { .card.half { grid-column: span 3; } }
+
+  /* sanftes Einblenden beim Scrollen (Inhalte bleiben immer sichtbar) */
+  .reveal { transform: translateY(26px) scale(.985); transition: transform 1s var(--ease), box-shadow .6s var(--ease), border-color .4s var(--ease); }
+  .reveal.in { transform: none; }
+
+  h2 {
+    font: 400 .76rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: .14em;
+    color: var(--muted); margin: 0 0 1.2rem;
+  }
+  .card p { margin: 0; max-width: 62ch; }
+  .card p + p { margin-top: .9rem; }
+  .lead { font: 500 clamp(1.15rem, 2.6vw, 1.35rem)/1.5 var(--font-display); }
+
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; display: grid; gap: 1.6rem; }
+  .timeline::before { content: ""; position: absolute; left: .4rem; top: .5rem; bottom: .5rem; width: 2px; background: linear-gradient(var(--accent), var(--accent-2), transparent); border-radius: 2px; }
+  .timeline li { position: relative; padding-left: 2rem; transition: transform .5s var(--ease); }
+  .timeline li:hover { transform: translateX(4px); }
+  .timeline li::before { content: ""; position: absolute; left: 0; top: .45rem; width: .9rem; height: .9rem; border-radius: 50%; background: var(--surface-solid); border: 2px solid var(--accent); }
+  .when { font: 400 .8rem/1.6 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .timeline strong { display: block; font: 600 1.1rem/1.35 var(--font-display); }
+  .timeline span.sub { color: var(--muted); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: 0; }
+  .chips li {
+    padding: .45rem .9rem; border-radius: 999px; font-size: .92rem; font-weight: 600;
+    background: var(--surface-solid); border: 1px solid var(--line);
+    transition: transform .4s var(--ease), border-color .3s var(--ease);
+  }
+  .chips li:hover { transform: translateY(-2px); border-color: var(--accent); }
+
+  .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+  .contact a, .contact .row {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: .9rem 1.1rem; border-radius: 1rem; text-decoration: none; color: var(--fg);
+    background: var(--surface-solid); border: 1px solid var(--line);
+    transition: transform .45s var(--ease), border-color .3s var(--ease), background-color .3s var(--ease);
+  }
+  .contact a:hover { transform: translateX(4px); border-color: var(--accent); }
+  .contact .k { font: 400 .8rem/1.4 var(--font-mono); color: var(--muted); flex: none; }
+  .contact .v { font-weight: 600; overflow-wrap: anywhere; text-align: right; min-width: 0; }
+
+  footer { position: relative; z-index: 1; max-width: 52rem; margin: 0 auto; padding-block: 1.5rem 2.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; color: var(--muted); font-size: .88rem; }
+  footer a { color: inherit; transition: color .3s var(--ease); }
+  footer a:hover { color: var(--accent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+    .reveal { transform: none; }
+  }
+</style>
 </head>
 <body>
-  <main>
-    <h1>meixner<span>.club</span></h1>
-    <p>Hier entsteht bald etwas Neues.</p>
-  </main>
+<div class="aura" aria-hidden="true"><span class="a"></span><span class="b"></span><span class="c"></span></div>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <a class="brand" href="#top">meixner<b>.</b>club</a>
+  <ul class="links">
+    <li><a href="#ueber">Über mich</a></li>
+    <li><a href="#werdegang">Werdegang</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <button class="theme" id="theme" type="button" aria-label="Hell oder dunkel umschalten">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+</nav>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <span class="status"><span class="dot"></span> IT-Systemadministrator bei ERBACHER the food family</span>
+    <h1>Hi, ich bin <span class="grad">Jan Meixner</span>.</h1>
+    <p class="role">Ich sorge dafür, dass IT zuverlässig läuft, verständlich bleibt und den Menschen hilft, die jeden Tag damit arbeiten. <strong>Aus Kirchzell in Bayern.</strong></p>
+    <div class="cta">
+      <a class="btn primary" href="#kontakt">Kontakt aufnehmen <span class="arrow">→</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/jan-meixner-975916289" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card reveal" id="ueber" aria-labelledby="h-about">
+      <h2 id="h-about">Über mich</h2>
+      <p class="lead">Gute IT merkt man oft erst, wenn sie fehlt. Mein Ziel ist, dass sie einfach funktioniert.</p>
+      <p>Seit 2020 bin ich IT-Systemadministrator bei ERBACHER the food family in Kleinheubach. Dort betreue ich Microsoft 365, Windows-Umgebungen und die IT mehrerer Standorte, von Benutzerkonten über mobile Geräte bis zu geschäftskritischen Anwendungen. Als AI Ambassador helfe ich außerdem Kolleginnen und Kollegen dabei, KI-Werkzeuge sinnvoll im Arbeitsalltag einzusetzen.</p>
+      <p>Diese Seite ist mein erstes eigenes Projekt mit Claude Code und wächst Stück für Stück weiter.</p>
+    </section>
+
+    <section class="card half reveal" id="werdegang" aria-labelledby="h-cv">
+      <h2 id="h-cv">Werdegang</h2>
+      <ol class="timeline">
+        <li><span class="when">08/2020 – heute</span><strong>IT-Systemadministrator</strong><span class="sub">ERBACHER the food family · Kleinheubach</span></li>
+        <li><span class="when">08/2017 – 06/2020</span><strong>Staatlich geprüfter Informationstechnischer Assistent</strong><span class="sub">Bergisches Berufskolleg Wipperfürth und Wermelskirchen</span></li>
+        <li><span class="when">09/2017 – 03/2018</span><strong>Information Technology Specialist</strong><span class="sub">INOVACOM</span></li>
+      </ol>
+    </section>
+
+    <section class="card half reveal" aria-labelledby="h-skills">
+      <h2 id="h-skills">Schwerpunkte</h2>
+      <ul class="chips">
+        <li>Microsoft 365</li><li>Microsoft Entra ID</li><li>Microsoft Teams</li><li>Exchange Online</li><li>SharePoint Online</li><li>Active Directory</li><li>Windows Server</li><li>IT-Service-Management</li><li>Mobile Geräte &amp; Scanner</li><li>KI im Arbeitsalltag</li>
+      </ul>
+    </section>
+
+    <section class="card reveal" id="kontakt" aria-labelledby="h-contact">
+      <h2 id="h-contact">Kontakt</h2>
+      <ul class="contact">
+        <li><a href="mailto:janmeixner1@gmx.de"><span class="k">E-Mail</span><span class="v">janmeixner1@gmx.de</span></a></li>
+        <li><a href="https://www.linkedin.com/in/jan-meixner-975916289" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">Jan Meixner</span></a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <span>© 2026 Jan Meixner</span>
+</footer>
+
+<script>
+  // Karten gleiten beim Scrollen sanft an ihren Platz
+  const cards = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    cards.forEach(c => io.observe(c));
+  } else { cards.forEach(c => c.classList.add('in')); }
+
+  // aktiven Abschnitt in der Navigation markieren
+  const navLinks = [...document.querySelectorAll('.links a')];
+  const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+  const markActive = () => {
+    let current = null;
+    targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top < window.innerHeight * 0.4) current = i; });
+    navLinks.forEach((a, i) => a.classList.toggle('on', i === current));
+  };
+  addEventListener('scroll', markActive, { passive: true }); markActive();
+
+  // Hell/Dunkel umschalten
+  document.getElementById('theme').addEventListener('click', () => {
+    const root = document.documentElement;
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+  });
+</script>
 </body>
 </html>
