@@ -2,308 +2,970 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jan Meixner · IT-Systemadministrator</title>
-<meta name="description" content="Jan Meixner, IT-Systemadministrator aus Kirchzell. Microsoft 365, Entra ID, IT-Service-Management und KI im Arbeitsalltag.">
-<meta property="og:title" content="Jan Meixner">
-<meta property="og:description" content="IT-Systemadministrator aus Kirchzell in Bayern.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Websites für Betriebe aus dem Odenwald</title>
+<meta name="description" content="Ich baue Websites für Gasthäuser, Handwerker, Praxen und Ferienwohnungen rund um Kirchzell. Persönlich, vor Ort und ohne Fachchinesisch.">
+<meta name="theme-color" content="#1f5c45">
+<link rel="canonical" href="https://meixner.club/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
 <meta property="og:url" content="https://meixner.club/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233a4fe0'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EJM%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<meta property="og:title" content="Websites für Betriebe aus dem Odenwald">
+<meta property="og:description" content="Persönlich, vor Ort und ohne Fachchinesisch. Websites für kleine Betriebe rund um Kirchzell.">
+<meta property="og:image" content="https://meixner.club/bilder/jan.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="fonts.css">
 <style>
-  /* Layout: schwebende Glas-Navigation, großer Hero mit weich treibenden Farbflächen, Abschnitte als Glaskarten mit sanftem Einblenden */
-  :root {
-    --bg: #f2f4f8;
-    --surface: rgba(255,255,255,.66);
-    --surface-solid: #ffffff;
-    --fg: #121a26;
-    --muted: #5a6779;
-    --line: rgba(18,26,38,.10);
-    --accent: #3a4fe0;
-    --accent-2: #12a6b8;
-    --glow-1: rgba(58,79,224,.30);
-    --glow-2: rgba(18,166,184,.26);
-    --glow-3: rgba(140,92,240,.20);
-    --ph: #c26a12;
-    --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-    --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
-    --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
-    --ease: cubic-bezier(.22,1,.36,1);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0b1018; --surface: rgba(24,32,46,.62); --surface-solid: #161e2b;
-      --fg: #eaf0f7; --muted: #9babbd; --line: rgba(234,240,247,.10);
-      --accent: #8b9bff; --accent-2: #4fd3e0;
-      --glow-1: rgba(90,110,255,.30); --glow-2: rgba(40,190,210,.20); --glow-3: rgba(150,100,255,.22);
-      --ph: #f0a65e; color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0b1018; --surface: rgba(24,32,46,.62); --surface-solid: #161e2b;
-    --fg: #eaf0f7; --muted: #9babbd; --line: rgba(234,240,247,.10);
-    --accent: #8b9bff; --accent-2: #4fd3e0;
-    --glow-1: rgba(90,110,255,.30); --glow-2: rgba(40,190,210,.20); --glow-3: rgba(150,100,255,.22);
-    --ph: #f0a65e; color-scheme: dark;
-  }
+/* Hülle: feste Kopfzeile + Tab-Leiste. Jeder Tab ist eine eigene Onepage mit eigenem Layout, eigener Schrift und eigener Unternavigation */
+:root{
+  --bg:#f6f7f5; --surface:#ffffff; --fg:#1b2420; --muted:#5d6a63; --line:#dfe4e0; --accent:#2f6f5a;
+  --f-display:"Bricolage Grotesque",system-ui,sans-serif; --f-body:"Source Sans 3",system-ui,sans-serif;
+  --hdr:108px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--surface:#1a221e;--fg:#e6ece8;--muted:#9aa8a0;--line:#2b3631;--accent:#7cc4a8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121815;--surface:#1a221e;--fg:#e6ece8;--muted:#9aa8a0;--line:#2b3631;--accent:#7cc4a8;color-scheme:dark}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--f-body)}
+*{box-sizing:border-box}
+a{color:inherit}
+h1,h2,h3{text-wrap:balance}
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg); color: var(--fg);
-    font: 400 1.0625rem/1.65 var(--font-body);
-    padding-inline: 16px; padding-block: 0;
-    overflow-x: hidden;
-    transition: background-color .5s var(--ease), color .5s var(--ease);
-  }
+/* Kopf */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1100px;margin:0 auto;padding:12px 16px 0;display:flex;flex-direction:column;gap:8px}
+.brand{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.brand b{font:700 1.25rem var(--f-display);letter-spacing:-.01em}
+.brand span{color:var(--muted);font-size:.9rem}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:0;background:none;color:var(--muted);font:600 .95rem var(--f-body);padding:10px 14px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{color:var(--fg);border-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-  /* treibende Farbflächen im Hintergrund */
-  .aura { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-  .aura span { position: absolute; border-radius: 50%; filter: blur(70px); will-change: transform; }
-  .aura .a { width: 42vmax; height: 42vmax; background: var(--glow-1); top: -14vmax; left: -10vmax; animation: drift1 22s ease-in-out infinite alternate; }
-  .aura .b { width: 36vmax; height: 36vmax; background: var(--glow-2); top: 8vmax; right: -14vmax; animation: drift2 26s ease-in-out infinite alternate; }
-  .aura .c { width: 30vmax; height: 30vmax; background: var(--glow-3); bottom: -12vmax; left: 20vmax; animation: drift3 30s ease-in-out infinite alternate; }
-  @keyframes drift1 { to { transform: translate(12vmax, 8vmax) scale(1.1); } }
-  @keyframes drift2 { to { transform: translate(-10vmax, 12vmax) scale(.9); } }
-  @keyframes drift3 { to { transform: translate(-8vmax, -10vmax) scale(1.15); } }
+/* Panels + Übergang */
+.panel{transition:opacity .28s ease,transform .28s ease}
+.panel.out{opacity:0;transform:translateY(8px)}
+@media (prefers-reduced-motion:reduce){.panel{transition:none}}
 
-  /* Navigation */
-  .nav {
-    position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); z-index: 10;
-    max-width: 52rem; margin: 12px auto 0;
-    display: flex; align-items: center; justify-content: space-between; gap: .75rem;
-    padding: .5rem .5rem .5rem 1rem; border-radius: 999px;
-    background: var(--surface); border: 1px solid var(--line);
-    backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
-    animation: rise .8s var(--ease) both;
-  }
-  .brand { font: 800 1rem/1 var(--font-display); letter-spacing: -.02em; color: var(--fg); text-decoration: none; white-space: nowrap; }
-  .brand b { color: var(--accent); font-weight: 800; }
-  .links { display: flex; gap: .15rem; list-style: none; margin: 0; padding: 0; min-width: 0; overflow-x: auto; scrollbar-width: none; }
-  .links a {
-    display: block; padding: .45rem .8rem; border-radius: 999px; white-space: nowrap;
-    color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 600;
-    transition: color .3s var(--ease), background-color .3s var(--ease);
-  }
-  .links a:hover { color: var(--fg); }
-  .links a.on { color: var(--fg); background: var(--surface-solid); box-shadow: 0 1px 6px rgba(0,0,0,.08); }
-  .theme {
-    flex: none; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1px solid var(--line);
-    background: var(--surface-solid); color: var(--fg); cursor: pointer; display: grid; place-items: center;
-    transition: transform .5s var(--ease);
-  }
-  .theme:hover { transform: rotate(25deg); }
-  @media (max-width: 36rem) { .links { display: none; } }
+/* Gemeinsame Basis der Unternavigation, Aussehen je Tab */
+.subnav{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hdr));z-index:10;display:flex;overflow-x:auto;scrollbar-width:none}
+.subnav::-webkit-scrollbar{display:none}
+.subnav a{flex:none;text-decoration:none;white-space:nowrap}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px}
+section{scroll-margin-top:calc(var(--hdr) + 64px)}
+.badge{display:inline-block;font:700 .7rem/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;padding:6px 10px}
+.demo{margin:0;padding:6px 16px;text-align:center;font:600 .78rem/1.4 var(--f-body);color:var(--muted);background:var(--bg);border-bottom:1px solid var(--line)}
+.note{font-size:.85rem;opacity:.7;padding-block:28px 44px}
 
-  .wrap { position: relative; z-index: 1; max-width: 52rem; margin-inline: auto; padding-block: clamp(3rem, 9vw, 6rem) 2.5rem; display: grid; gap: clamp(1.25rem, 3vw, 1.75rem); }
+/* ============ ÜBER MICH: lebendig, farbig, persönlich ============ */
+:root{--u-bg:#f3f6f0;--u-ink:#14231c;--u-soft:#4f5f57;--u-green:#1f5c45;--u-green-fg:#ffffff;--u-apri:#ff8a5b;--u-sun:#ffd166;--u-mint:#cdeedb;--u-peach:#ffe2d3;--u-butter:#fff1c7;--u-card:#ffffff;--u-line:#dfe6dc;--u-hl:#ffd166}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--u-bg:#101813;--u-ink:#eef3ee;--u-soft:#a7b5ad;--u-green:#3f9b76;--u-green-fg:#0d1a14;--u-apri:#ff9a70;--u-sun:#ffd166;--u-mint:#1d3b2e;--u-peach:#3d2a22;--u-butter:#3a3320;--u-card:#18221c;--u-line:#2a3a31;--u-hl:#ffd16652}}
+:root[data-theme="dark"]{--u-bg:#101813;--u-ink:#eef3ee;--u-soft:#a7b5ad;--u-green:#3f9b76;--u-green-fg:#0d1a14;--u-apri:#ff9a70;--u-sun:#ffd166;--u-mint:#1d3b2e;--u-peach:#3d2a22;--u-butter:#3a3320;--u-card:#18221c;--u-line:#2a3a31;--u-hl:#ffd16652}
+#p-ueber{background:var(--u-bg);color:var(--u-ink);overflow-x:clip}
+#p-ueber .subnav{gap:26px;padding:0 max(16px,calc((100vw - 1040px)/2 + 16px));background:color-mix(in srgb,var(--u-bg) 94%,transparent);border-bottom:1px solid var(--u-line)}
+#p-ueber .subnav a{font-size:.9rem;font-weight:600;padding:12px 0 10px;color:var(--u-soft);border-bottom:2px solid transparent}
+#p-ueber .subnav a:hover{color:var(--u-ink);border-color:var(--u-apri)}
+#p-ueber h2{font:700 clamp(1.9rem,4.4vw,2.8rem)/1.05 var(--f-display);letter-spacing:-.025em;margin:0 0 14px}
+.u-hero{padding-block:56px 72px;display:grid;gap:48px;grid-template-columns:1fr;align-items:center}
+@media(min-width:860px){.u-hero{grid-template-columns:1.1fr 1fr;padding-block:80px 104px}}
+.u-hero>div{min-width:0}
+.u-hero h1{font:700 clamp(3rem,10vw,6.2rem)/.92 var(--f-display);letter-spacing:-.045em;margin:0 0 22px}
+.u-hero h1 .name{position:relative;display:inline-block;color:var(--u-green)}
+.u-hero h1 .name svg{position:absolute;left:-2%;bottom:-.16em;width:104%;height:.3em;overflow:visible}
+.u-hero h1 .name path{fill:none;stroke:var(--u-apri);stroke-width:7;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:0;animation:u-draw 1.2s .3s ease-out backwards}
+@keyframes u-draw{from{stroke-dashoffset:300}}
+.u-rot{font:700 clamp(1.25rem,3vw,1.7rem)/1.3 var(--f-display);margin:0 0 18px;letter-spacing:-.01em}
+.u-word{display:inline-block;color:#14231c;background:var(--u-sun);padding:0 .25em;transition:opacity .25s,transform .25s}
+.u-word.swap{opacity:0;transform:translateY(6px)}
+.u-hero p.lead{font-size:1.15rem;max-width:50ch;color:var(--u-soft);margin:0 0 10px}
+.u-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.u-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:6px;font-weight:700;text-decoration:none;border:2px solid var(--u-ink);transition:background .2s,color .2s}
+.u-btn.pri{background:var(--u-ink);color:var(--u-bg)}
+.u-btn.pri:hover{background:var(--u-green);border-color:var(--u-green);color:var(--u-green-fg)}
+.u-btn:not(.pri):hover{background:var(--u-ink);color:var(--u-bg)}
+.u-visual{margin:0 18px 18px 0;justify-self:end;width:min(470px,calc(100% - 18px))}
+.u-visual .ph{position:relative;display:block}
+.u-visual .ph::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--u-apri)}
+.u-visual img{position:relative;display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover}
+.u-visual figcaption{margin-top:30px;font-size:.88rem;color:var(--u-soft)}
+.u-strip{background:var(--u-green);color:var(--u-green-fg)}
+.u-strip ul{list-style:none;margin:0 auto;padding:22px 16px;max-width:1040px;display:grid;grid-template-columns:1fr;gap:6px}
+.u-strip li{font:700 1.15rem var(--f-display);letter-spacing:-.01em}
+@media(min-width:760px){.u-strip ul{grid-template-columns:repeat(3,1fr);gap:0}.u-strip li+li{border-left:1px solid color-mix(in srgb,currentColor 30%,transparent);padding-left:24px}}
+.u-sec{padding-block:76px;display:grid;gap:10px 48px;grid-template-columns:1fr}
+.u-sec+.u-sec{border-top:1px solid var(--u-line)}
+@media(min-width:860px){.u-sec{grid-template-columns:190px 1fr}}
+.u-sec>div{min-width:0}
+.u-label{margin:0;padding-top:.7rem;font-size:.9rem;font-weight:600;color:var(--u-soft);display:flex;gap:10px;align-items:baseline}
+.u-label b{color:var(--u-apri);font-variant-numeric:tabular-nums}
+.u-svc{display:grid;grid-template-columns:1fr;margin-top:26px;border-top:2px solid var(--u-ink)}
+@media(min-width:760px){.u-svc{grid-template-columns:repeat(3,1fr)}}
+.u-svc article{padding:22px 0 26px;border-bottom:1px solid var(--u-line);min-width:0}
+@media(min-width:760px){.u-svc article{border-bottom:0;padding-right:26px}.u-svc article+article{border-left:1px solid var(--u-line);padding-left:26px}}
+.u-svc h3{font:700 1.3rem var(--f-display);margin:0 0 8px;letter-spacing:-.01em}
+.u-svc h3::before{content:"";display:block;width:28px;height:6px;margin-bottom:16px;background:var(--u-apri)}
+.u-svc article:nth-child(2) h3::before{background:var(--u-green)}
+.u-svc article:nth-child(3) h3::before{background:var(--u-sun)}
+.u-svc p{margin:0 0 12px;color:var(--u-soft)}
+.u-svc ul{margin:0;padding:0;list-style:none;font-size:.95rem}
+.u-svc li{padding:7px 0;border-top:1px solid var(--u-line)}
+.u-steps{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));counter-reset:u}
+.u-steps li{counter-increment:u;border-top:2px solid var(--u-ink);padding-top:12px}
+.u-steps li::before{content:counter(u,decimal-leading-zero);display:block;font-weight:700;font-size:.85rem;color:var(--u-apri);margin-bottom:22px;font-variant-numeric:tabular-nums}
+.u-steps b{display:block;font:700 1.2rem var(--f-display);margin-bottom:4px}
+.u-steps span{color:var(--u-soft)}
+.u-shots{display:grid;gap:34px 22px;grid-template-columns:1fr;margin-top:30px}
+@media(min-width:700px){.u-shots{grid-template-columns:repeat(6,1fr)}.u-shot:nth-child(-n+2){grid-column:span 3}.u-shot:nth-child(n+3){grid-column:span 2}}
+.u-shot{all:unset;box-sizing:border-box;cursor:pointer;display:block;min-width:0}
+.u-shot .fr{display:block;overflow:hidden;background:var(--u-line)}
+.u-shot .pic{display:block;aspect-ratio:4/3;background-size:cover;background-position:center;transition:transform .5s ease}
+.u-shot:hover .pic{transform:scale(1.04)}
+.u-shot .cap{display:grid;gap:2px;padding:12px 0 10px;border-bottom:1px solid var(--u-line)}
+.u-shot .cap b{font:700 1.15rem var(--f-display);transition:color .2s}
+.u-shot .cap span{color:var(--u-soft);font-size:.9rem}
+.u-shot:hover .cap b{color:var(--u-green)}
+.u-shot:focus-visible{outline:3px solid var(--u-green);outline-offset:4px}
+.u-note{color:var(--u-soft);max-width:60ch;margin:0}
+.u-end{padding-block:24px 76px}
+.u-cta{background:var(--u-green);color:var(--u-green-fg);padding:clamp(28px,6vw,64px);display:grid;gap:30px;grid-template-columns:1fr;border-radius:4px}
+@media(min-width:820px){.u-cta{grid-template-columns:1.2fr 1fr;align-items:end}}
+.u-cta>div{min-width:0}
+.u-cta h2{color:inherit}
+.u-cta p{margin:0;opacity:.9;max-width:44ch;font-size:1.1rem}
+.u-contact div{padding:14px 0;border-top:1px solid color-mix(in srgb,currentColor 35%,transparent)}
+.u-contact small{display:block;font-size:.8rem;opacity:.75}
+.u-contact a{color:inherit;text-decoration:none}.u-contact a:hover{text-decoration:underline}
+.u-contact strong{font:700 clamp(1.3rem,2.6vw,1.7rem) var(--f-display);user-select:all;overflow-wrap:anywhere}
+footer.shell{padding-block:0 40px;color:var(--u-soft);font-size:.85rem}
+@media (prefers-reduced-motion:reduce){.u-hero h1 .name path{animation:none}}
 
-  .note {
-    font: 400 .78rem/1.5 var(--font-mono); color: var(--muted); margin: 0 0 1rem;
-    animation: rise .8s var(--ease) .05s both;
-  }
-  .ph { color: var(--ph); }
+/* ============ GASTHAUS: klassisch, mittig, wie eine gedruckte Karte ============ */
+#p-gasthaus{background:#f3ecdb;color:#2a2a22;font:17px/1.6 "Alegreya",Georgia,serif}
+#p-gasthaus .subnav{justify-content:safe center;gap:4px;padding:8px 16px;background:#24372b;border-bottom:3px double #c9a95c}
+#p-gasthaus .subnav a{font:500 1rem "Alegreya SC",Georgia,serif;letter-spacing:.06em;color:#efe6cf;padding:6px 14px}
+#p-gasthaus .subnav a:hover{color:#e2c77e}
+.g-hero{text-align:center;background:linear-gradient(#1d2e2380,#1d2e23cc),url(bilder/g_hero.jpg) center/cover,#1d2e23;color:#f3ecdb;padding-block:96px 104px}
+.g-hero .badge{background:#f3ecdb22;color:#efe6cf}
+.g-crest{font-size:2.4rem;color:#c9a95c;margin-top:18px;line-height:1}
+.g-hero h1{font:700 clamp(2.6rem,8vw,4.8rem)/1 "Alegreya",Georgia,serif;margin:0 0 8px}
+.g-since{font:500 1.05rem "Alegreya SC",Georgia,serif;letter-spacing:.2em;color:#c9a95c}
+.g-hero p{max-width:46ch;margin:18px auto 0;font-style:italic;font-size:1.15rem}
+.g-orn{width:64px;height:5px;border-block:1px solid #a8874a;margin:0 auto 22px}
+#p-gasthaus section.c{padding-block:56px;text-align:center}
+#p-gasthaus h2{font:700 2rem "Alegreya",Georgia,serif;color:#24372b;margin:0 0 6px}
+.g-card{max-width:620px;margin:0 auto;background:#fffaf0;border:1px solid #d9caa4;outline:1px solid #d9caa4;outline-offset:-8px;padding:36px 28px;text-align:left}
+.g-card h3{font:500 1.05rem "Alegreya SC",Georgia,serif;letter-spacing:.12em;color:#8a6a2e;text-align:center;margin:20px 0 8px}
+.g-card h3:first-child{margin-top:0}
+.g-dish{display:flex;align-items:baseline;gap:8px;padding:5px 0}
+.g-dish span{min-width:0}
+.g-dish i{flex:1;border-bottom:1px dotted #b9a274;transform:translateY(-4px);min-width:20px}
+.g-dish em{font-style:normal;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.g-dish small{display:block;font-style:italic;opacity:.75;font-size:.9rem}
+.g-split{display:grid;gap:28px;grid-template-columns:1fr;align-items:center;text-align:left}
+@media(min-width:760px){.g-split{grid-template-columns:1fr 1fr}}
+.g-pic{margin:0}
+.g-pic img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border:8px solid #fffaf0;box-shadow:0 2px 0 #d9caa4}
+.g-pic figcaption{text-align:center;font-style:italic;font-size:.9rem;opacity:.7;margin-top:8px}
+.g-split h2{text-align:left}
+.g-hours{display:inline-block;border:3px double #24372b;padding:20px 32px;background:#fffaf0}
+.g-hours table{border-collapse:collapse;font-variant-numeric:tabular-nums;text-align:left}
+.g-hours td{padding:5px 16px}
+.g-hours td:first-child{font-family:"Alegreya SC",Georgia,serif}
+#p-gasthaus .note{text-align:center}
 
-  /* Hero */
-  .hero { display: grid; gap: 1.4rem; padding-bottom: clamp(1.5rem, 5vw, 3rem); }
-  .hero > * { animation: rise 1s var(--ease) both; }
-  .hero > :nth-child(1) { animation-delay: .1s; }
-  .hero > :nth-child(2) { animation-delay: .2s; }
-  .hero > :nth-child(3) { animation-delay: .32s; }
-  .hero > :nth-child(4) { animation-delay: .44s; }
-  .hero > :nth-child(5) { animation-delay: .56s; }
-  @keyframes rise { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+/* ============ HANDWERK: kantig, technisch, Signalgelb ============ */
+#p-handwerk{background:#eceae4;color:#1f2326;font:16px/1.55 "Archivo",system-ui,sans-serif}
+#p-handwerk .subnav{background:#1f2326;padding:0 16px}
+#p-handwerk .subnav a{font:600 .85rem "Archivo Narrow","Archivo",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#d8d6cf;padding:13px 16px;border-right:1px solid #353a3e}
+#p-handwerk .subnav a:first-child{border-left:1px solid #353a3e}
+#p-handwerk .subnav a:hover{background:#f2c230;color:#1f2326}
+.h-hero{display:grid;grid-template-columns:1fr;border-bottom:6px solid #1f2326}
+@media(min-width:820px){.h-hero{grid-template-columns:1.5fr 1fr}}
+.h-hero-l{padding:56px max(16px,calc((100vw - 1040px)/2 + 16px)) 52px;padding-right:28px;background:#eceae4}
+.h-hero-l .badge{background:#1f2326;color:#f2c230}
+.h-hero h1{font:800 clamp(2.4rem,7vw,4.4rem)/.95 "Archivo",sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:18px 0 16px}
+.h-hero p{max-width:44ch;font-size:1.1rem;margin:0}
+.h-btn{display:inline-block;margin-top:24px;background:#1f2326;color:#f2c230;font:800 .95rem "Archivo",sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:14px 22px;text-decoration:none}
+.h-facts{background:url(bilder/h_hero.jpg) 50% 72%/cover,#7a6a58;border-left:10px solid #f2c230;min-height:340px;display:grid;grid-template-columns:repeat(3,1fr);align-content:end}
+.h-facts div{background:#1f2326;color:#fff;padding:14px 16px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.h-facts div+div{border-left:1px solid #353a3e}
+.h-facts b{font:800 1.6rem "Archivo",sans-serif;color:#f2c230;font-variant-numeric:tabular-nums;order:-1}
+.h-facts span{font:600 .75rem "Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#d8d6cf}
+#p-handwerk section.c{padding-block:56px}
+#p-handwerk h2{font:800 clamp(1.6rem,4vw,2.3rem)/1 "Archivo",sans-serif;text-transform:uppercase;margin:0 0 24px;display:flex;align-items:center;gap:14px}
+#p-handwerk{counter-reset:hs}
+#p-handwerk h2::before{counter-increment:hs;content:counter(hs,decimal-leading-zero);font:600 .85rem "Archivo Narrow",sans-serif;letter-spacing:.06em;background:#f2c230;color:#1f2326;padding:5px 7px;flex:none}
+.h-list{border-top:2px solid #1f2326}
+.h-row{display:grid;grid-template-columns:1fr;gap:4px 24px;padding:18px 0;border-bottom:1px solid #c8c4ba}
+@media(min-width:700px){.h-row{grid-template-columns:260px 1fr auto;align-items:baseline}}
+.h-row b{font:800 1.15rem "Archivo",sans-serif;text-transform:uppercase}
+.h-row span{min-width:0}
+.h-row small{font:600 .8rem "Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.06em;background:#1f2326;color:#f2c230;padding:4px 8px;justify-self:start}
+.h-refs{display:grid;gap:4px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.h-ref{aspect-ratio:4/3;max-width:100%;position:relative;color:#fff;padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
+.h-ref b{font:800 1.05rem "Archivo",sans-serif;text-transform:uppercase;position:relative}
+.h-ref span{font-size:.85rem;opacity:.9;position:relative}
+.h-ref::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,#000a)}
+.h-r1{background:url(bilder/h_r1.jpg) center/cover,#7a6a58}
+.h-r2{background:url(bilder/h_r2.jpg) center/cover,#8b9298}
+.h-r3{background:url(bilder/h_r3.jpg) center/cover,#a0794f}
+.h-r4{background:url(bilder/h_r4.jpg) center/cover,#5a6b74}
+.h-form{display:grid;gap:14px;grid-template-columns:1fr;max-width:720px}
+@media(min-width:640px){.h-form{grid-template-columns:1fr 1fr}.h-form .full{grid-column:1/-1}}
+.h-form label{display:grid;gap:4px;font:600 .8rem "Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.h-form input,.h-form select,.h-form textarea{font:inherit;font-size:1rem;padding:12px;border:2px solid #1f2326;background:#fff;color:#1f2326;border-radius:0;width:100%}
+.h-form button{all:unset;cursor:pointer;background:#f2c230;color:#1f2326;font:800 1rem "Archivo",sans-serif;text-transform:uppercase;padding:14px 22px;justify-self:start;border:2px solid #1f2326}
+.h-form button:focus-visible{outline:3px solid #1f2326;outline-offset:2px}
+.h-ok{font-weight:600}
 
-  .status {
-    justify-self: start; display: inline-flex; align-items: center; gap: .55rem;
-    padding: .4rem .85rem; border-radius: 999px; font-size: .88rem; font-weight: 600;
-    background: var(--surface); border: 1px solid var(--line); backdrop-filter: blur(10px);
-  }
-  .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--accent-2); position: relative; }
-  .dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent-2); animation: ping 2.2s var(--ease) infinite; }
-  @keyframes ping { from { transform: scale(1); opacity: .7; } to { transform: scale(2.8); opacity: 0; } }
+/* ============ FRISEUR: dunkel, Editorial, große Schrift, asymmetrisch ============ */
+#p-friseur{background:#0f0f0f;color:#f2e9e4;font:16px/1.6 "Source Sans 3",system-ui,sans-serif}
+#p-friseur .subnav{justify-content:flex-end;gap:22px;padding:14px 24px;background:#0f0f0fee;border-bottom:1px solid #262626}
+#p-friseur .subnav a{font:600 .78rem "Syne",sans-serif;text-transform:uppercase;letter-spacing:.18em;color:#f2e9e4;padding:4px 0;border-bottom:1px solid transparent}
+#p-friseur .subnav a:hover{border-color:#e0a995;color:#e0a995}
+.f-hero{position:relative;padding-block:72px 56px;overflow:hidden;background:radial-gradient(circle at 85% 30%,#c98f7a40,transparent 45%),linear-gradient(90deg,#0f0f0f 30%,#0f0f0fb3),url(bilder/f_hero.jpg) right center/cover,#0f0f0f}
+.f-hero .badge{border:1px solid #f2e9e455;color:#f2e9e4}
+.f-hero h1{font:800 clamp(2.6rem,9.5vw,7rem)/.85 "Syne",sans-serif;letter-spacing:-.04em;margin:24px 0 0;text-transform:lowercase}
+.f-hero h1 span{display:block;padding-left:min(8vw,120px);color:#e0a995}
+.f-hero p{max-width:34ch;margin:28px 0 0 auto;font-size:1.15rem;text-align:right}
+.f-side{position:absolute;right:10px;top:72px;writing-mode:vertical-rl;font:600 .72rem "Syne",sans-serif;letter-spacing:.3em;text-transform:uppercase;opacity:.5}
+#p-friseur section.c{padding-block:64px;border-top:1px solid #262626}
+#p-friseur h2{font:800 clamp(2rem,6vw,3.4rem)/1 "Syne",sans-serif;text-transform:lowercase;margin:0 0 28px;letter-spacing:-.03em}
+.f-strip{display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+.f-look{flex:0 0 min(240px,70vw);aspect-ratio:3/4;scroll-snap-align:start;display:flex;align-items:flex-end;padding:14px;font:600 .8rem "Syne",sans-serif;text-transform:uppercase;letter-spacing:.14em}
+.f-look{background-size:cover;background-position:center}.f-l1{background-image:linear-gradient(transparent 60%,#000c),url(bilder/f_l1.jpg)}.f-l2{background-image:linear-gradient(transparent 60%,#000c),url(bilder/f_l2.jpg)}.f-l3{background-image:linear-gradient(transparent 60%,#000c),url(bilder/f_l3.jpg)}.f-l4{background-image:linear-gradient(transparent 60%,#000c),url(bilder/f_l4.jpg)}
+.f-prices{display:grid;gap:36px;grid-template-columns:1fr}
+@media(min-width:760px){.f-prices{grid-template-columns:1fr 1fr}}
+.f-prices h3{font:600 .8rem "Syne",sans-serif;text-transform:uppercase;letter-spacing:.2em;color:#e0a995;margin:0 0 8px}
+.f-prices div div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #262626;font-variant-numeric:tabular-nums}
+.f-team{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.f-team div{display:grid;gap:4px}
+.f-team i{width:110px;height:110px;border-radius:50%;display:grid;place-items:center;font:800 2rem "Syne",sans-serif;font-style:normal;margin-bottom:8px;background:#1d1d1d;border:1px solid #333}
+.f-team b{font:800 1.2rem "Syne",sans-serif}
+.f-team span{opacity:.7}
+.f-cta{display:flex;flex-wrap:wrap;align-items:center;gap:28px}
+.f-round{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#e0a995;color:#111;font:800 1rem/1.1 "Syne",sans-serif;text-transform:lowercase;text-decoration:none;transition:transform .3s}
+.f-round:hover{transform:rotate(-8deg) scale(1.04)}
 
-  h1 {
-    font: 800 clamp(3rem, 12vw, 6.5rem)/.95 var(--font-display);
-    letter-spacing: -.045em; margin: 0; text-wrap: balance;
-  }
-  h1 .grad {
-    background: linear-gradient(100deg, var(--accent), var(--accent-2), var(--accent));
-    background-size: 220% 100%;
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: sheen 8s ease-in-out infinite alternate;
-  }
-  @keyframes sheen { to { background-position: 100% 0; } }
-  .role { font: 500 clamp(1.2rem, 3.4vw, 1.6rem)/1.35 var(--font-display); margin: 0; max-width: 34ch; color: var(--muted); }
-  .role strong { color: var(--fg); font-weight: 600; }
-  .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn {
-    display: inline-flex; align-items: center; gap: .55rem;
-    padding: .8rem 1.3rem; border-radius: 999px; text-decoration: none;
-    font: 600 1rem/1 var(--font-body); color: var(--fg);
-    background: var(--surface); border: 1px solid var(--line); backdrop-filter: blur(10px);
-    transition: transform .4s var(--ease), box-shadow .4s var(--ease), background-color .3s var(--ease);
-  }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px -10px var(--glow-1); }
-  .btn.primary { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #fff; border-color: transparent; }
-  .btn .arrow { transition: transform .4s var(--ease); }
-  .btn:hover .arrow { transform: translateX(4px); }
-  .btn:focus-visible, .links a:focus-visible, .theme:focus-visible, .card a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+/* ============ PHYSIO: hell, weich, freundlich, viel Luft ============ */
+#p-physio{background:#f7fbfd;color:#183244;font:16px/1.65 "Nunito",system-ui,sans-serif}
+#p-physio .subnav{gap:24px;padding:0 max(16px,calc((100vw - 1040px)/2 + 16px));background:#f7fbfdf2;border-bottom:1px solid #dbe9ef}
+#p-physio .subnav a{font-weight:700;font-size:.92rem;color:#46667a;padding:12px 0 10px;border-bottom:2px solid transparent}
+#p-physio .subnav a:hover{color:#17405a;border-color:#2ea3a3}
+.p-hero{padding-block:48px 64px;display:grid;gap:32px;grid-template-columns:1fr;align-items:center}
+@media(min-width:800px){.p-hero{grid-template-columns:1.3fr 1fr}}
+.p-hero .badge{background:#d8eef6;color:#17405a;border-radius:999px}
+.p-hero h1{font:800 clamp(2.2rem,6vw,3.5rem)/1.05 "Nunito",sans-serif;margin:16px 0 14px;color:#17405a}
+.p-hero h1 span{color:#2ea3a3}
+.p-hero p{font-size:1.15rem;max-width:44ch;margin:0}
+.p-visual img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px}
+.p-appt{margin-top:28px;border-left:3px solid #2ea3a3;padding:4px 0 4px 18px;display:grid;gap:8px;max-width:420px}
+.p-room{display:block;width:100%;aspect-ratio:21/8;object-fit:cover;border-radius:10px;margin-bottom:36px}
+.p-appt small{font-weight:700;color:#2ea3a3;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem}
+.p-appt b{font-size:1.4rem;color:#17405a}
+.p-slots{display:flex;flex-wrap:wrap;gap:8px}
+.p-slots span{padding:5px 10px;border-radius:6px;background:#e3f2f2;color:#17405a;font-weight:700;font-variant-numeric:tabular-nums}
+#p-physio section.c{padding-block:56px}
+#p-physio h2{font:800 clamp(1.7rem,3.6vw,2.2rem)/1.15 "Nunito",sans-serif;margin:0 0 8px;color:#17405a}
+.p-intro{max-width:52ch;margin:0 0 30px;color:#46667a}
+.p-cards{display:grid;gap:0 32px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.p-cards div{border-top:2px solid #17405a;padding:16px 0 22px;display:grid;gap:6px;align-content:start}
+.p-ico{width:44px;height:44px;border-radius:14px;background:#e3f2f7;display:grid;place-items:center}
+.p-ico svg{width:24px;height:24px;stroke:#1f6f8b;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.p-cards b{font-size:1.1rem}
+.p-cards span{color:#46667a;font-size:.95rem}
+.p-steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));list-style:none;padding:0;margin:0;counter-reset:p}
+.p-steps li{counter-increment:p;border-top:1px solid #c9dfe7;padding-top:14px}
+.p-steps li::before{content:counter(p);display:block;margin:0 0 8px;color:#2ea3a3;font:800 2.4rem/1 "Nunito",sans-serif}
+.p-steps b{display:block;font-size:1.1rem}
+.p-steps span{color:#46667a}
+.p-faq{max-width:760px;display:grid;border-top:1px solid #c9dfe7}
+.p-faq details{border-bottom:1px solid #c9dfe7;padding:2px 0}
+.p-faq summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.p-faq summary::after{content:"+";color:#2ea3a3;font-size:1.3rem;line-height:1}
+.p-faq details[open] summary::after{content:"–"}
+.p-faq p{margin:0 0 16px;color:#46667a}
+.p-contact{background:#17405a;color:#fff;border-radius:28px;padding:32px;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.p-contact small{display:block;opacity:.7;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+.p-contact strong{font-size:1.1rem}
 
-  /* Karten */
-  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(1.25rem, 3vw, 1.75rem); }
-  .card {
-    grid-column: span 6; min-width: 0;
-    padding: clamp(1.4rem, 4vw, 2.2rem); border-radius: 1.5rem;
-    background: var(--surface); border: 1px solid var(--line);
-    backdrop-filter: blur(18px) saturate(1.3); -webkit-backdrop-filter: blur(18px) saturate(1.3);
-    transition: transform .6s var(--ease), box-shadow .6s var(--ease), border-color .4s var(--ease);
-  }
-  .card:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -28px var(--glow-1); border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); }
-  @media (min-width: 46rem) { .card.half { grid-column: span 3; } }
+/* ============ GEMEINSAM FÜR BEISPIELE: Handy-Aktionsleiste, Karte, Fußzeile, Team, Stellen ============ */
+.actbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--ab-bg);box-shadow:0 -6px 20px #0003}
+.actbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;text-decoration:none;font-weight:700;font-size:1rem;color:var(--ab-fg);background:var(--ab-btn);border-radius:var(--ab-r,10px)}
+.actbar a.pri{background:var(--ab-pri);color:var(--ab-pri-fg)}
+.actbar svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:759px){.panel:not(#p-ueber){padding-bottom:76px}}
+@media(min-width:760px){.actbar{display:none}}
+.loc{display:grid;gap:24px;grid-template-columns:1fr;align-items:center}
+@media(min-width:760px){.loc{grid-template-columns:1.4fr 1fr}}
+.loc>div{min-width:0}
+.map{position:relative;border-radius:var(--m-r,0);overflow:hidden;background:var(--m-bg)}
+.map svg{display:block;width:100%;height:auto}
+.map small{position:absolute;right:8px;bottom:6px;font-size:.7rem;opacity:.6;color:var(--m-txt)}
+.route{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:12px 18px;text-decoration:none;font-weight:700;background:var(--m-pin);color:#fff;border-radius:var(--m-r,0)}
+.bfoot{padding-block:36px 28px;font-size:.92rem}
+.bfoot .cols{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.bfoot b{display:block;margin-bottom:4px}
+.bfoot .legal{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:24px;padding-top:16px;border-top:1px solid currentColor;border-color:color-mix(in srgb,currentColor 20%,transparent);font-size:.82rem;opacity:.75}
+.bfoot .legal a{text-decoration:underline}
+.team{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.team figure{margin:0;display:grid;gap:4px;align-content:start}
+.team img{width:100%;aspect-ratio:1;object-fit:cover;object-position:top;display:block;margin-bottom:8px}
+.team b{font-size:1.1rem}
+.team span{opacity:.75}
+.job{display:grid;gap:18px;grid-template-columns:1fr;padding:26px}
+@media(min-width:760px){.job{grid-template-columns:1.2fr 1fr}}
+.job>div{min-width:0}
+.job h3{margin:6px 0 10px;font-size:1.35rem;line-height:1.2}
+.job ul{margin:0;padding-left:1.1em}
+.job li{margin-bottom:4px}
+.job .tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px}
+/* Farben je Betrieb */
+#p-gasthaus{--ab-bg:#24372b;--ab-fg:#f3ecdb;--ab-btn:#ffffff1a;--ab-pri:#c9a95c;--ab-pri-fg:#1d2e23;--ab-r:2px;--m-bg:#efe6cf;--m-road:#fffaf0;--m-water:#b9cfc6;--m-green:#d6dcb8;--m-block:#e2d6b6;--m-pin:#24372b;--m-txt:#2a2a22;--m-r:2px}
+#p-handwerk{--ab-bg:#1f2326;--ab-fg:#fff;--ab-btn:#353a3e;--ab-pri:#f2c230;--ab-pri-fg:#1f2326;--ab-r:0;--m-bg:#dcd9d1;--m-road:#fff;--m-water:#a9b8c0;--m-green:#c9cdb7;--m-block:#c8c4ba;--m-pin:#1f2326;--m-txt:#1f2326;--m-r:0}
+#p-friseur{--ab-bg:#0f0f0f;--ab-fg:#f2e9e4;--ab-btn:#232323;--ab-pri:#e0a995;--ab-pri-fg:#111;--ab-r:999px;--m-bg:#1b1b1b;--m-road:#3a3a3a;--m-water:#2a2f33;--m-green:#22261f;--m-block:#262626;--m-pin:#e0a995;--m-txt:#f2e9e4;--m-r:28px 0 28px 0}
+#p-physio{--ab-bg:#fff;--ab-fg:#17405a;--ab-btn:#e3f2f7;--ab-pri:#2ea3a3;--ab-pri-fg:#fff;--ab-r:16px;--m-bg:#e8f2f5;--m-road:#fff;--m-water:#bfe0ea;--m-green:#d3ecd9;--m-block:#d9e6ec;--m-pin:#2ea3a3;--m-txt:#17405a;--m-r:24px}
+#p-gasthaus .bfoot{background:#24372b;color:#efe6cf}
+#p-gasthaus .team img{border:6px solid #fffaf0}
+#p-handwerk .bfoot{background:#1f2326;color:#d8d6cf}
+#p-handwerk .team img{filter:none}
+#p-handwerk .team figure{border-top:6px solid #f2c230;padding-top:12px}
+#p-handwerk .team b{font:800 1.1rem "Archivo",sans-serif;text-transform:uppercase}
+#p-handwerk .job{background:#1f2326;color:#fff;border-left:10px solid #f2c230}
+#p-handwerk .job .tag{background:#f2c230;color:#1f2326}
+#p-handwerk .job h3{font:800 1.5rem "Archivo",sans-serif;text-transform:uppercase}
+#p-friseur .bfoot{border-top:1px solid #262626}
+#p-friseur .job{border:1px solid #333;border-radius:28px 0 28px 0}
+#p-friseur .job .tag{border:1px solid #e0a995;color:#e0a995;border-radius:999px}
+#p-friseur .job h3{font:800 1.6rem "Syne",sans-serif;text-transform:lowercase}
+#p-physio .bfoot{background:#17405a;color:#fff}
+#p-physio .team img{border-radius:10px;aspect-ratio:4/5}
+#p-physio .job{background:#fff;border-radius:10px;border:1px solid #d3e5ec}
+#p-physio .job .tag{background:#e3f2f2;color:#1f6f8b;border-radius:4px}
+#p-physio .job h3{color:#17405a}
+#p-physio .job ul{color:#46667a}
 
-  /* sanftes Einblenden beim Scrollen (Inhalte bleiben immer sichtbar) */
-  .reveal { transform: translateY(26px) scale(.985); transition: transform 1s var(--ease), box-shadow .6s var(--ease), border-color .4s var(--ease); }
-  .reveal.in { transform: none; }
-
-  h2 {
-    font: 400 .76rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: .14em;
-    color: var(--muted); margin: 0 0 1.2rem;
-  }
-  .card p { margin: 0; max-width: 62ch; }
-  .card p + p { margin-top: .9rem; }
-  .lead { font: 500 clamp(1.15rem, 2.6vw, 1.35rem)/1.5 var(--font-display); }
-
-  .timeline { list-style: none; margin: 0; padding: 0; position: relative; display: grid; gap: 1.6rem; }
-  .timeline::before { content: ""; position: absolute; left: .4rem; top: .5rem; bottom: .5rem; width: 2px; background: linear-gradient(var(--accent), var(--accent-2), transparent); border-radius: 2px; }
-  .timeline li { position: relative; padding-left: 2rem; transition: transform .5s var(--ease); }
-  .timeline li:hover { transform: translateX(4px); }
-  .timeline li::before { content: ""; position: absolute; left: 0; top: .45rem; width: .9rem; height: .9rem; border-radius: 50%; background: var(--surface-solid); border: 2px solid var(--accent); }
-  .when { font: 400 .8rem/1.6 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-  .timeline strong { display: block; font: 600 1.1rem/1.35 var(--font-display); }
-  .timeline span.sub { color: var(--muted); }
-
-  .chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: 0; }
-  .chips li {
-    padding: .45rem .9rem; border-radius: 999px; font-size: .92rem; font-weight: 600;
-    background: var(--surface-solid); border: 1px solid var(--line);
-    transition: transform .4s var(--ease), border-color .3s var(--ease);
-  }
-  .chips li:hover { transform: translateY(-2px); border-color: var(--accent); }
-
-  .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
-  .contact a, .contact .row {
-    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-    padding: .9rem 1.1rem; border-radius: 1rem; text-decoration: none; color: var(--fg);
-    background: var(--surface-solid); border: 1px solid var(--line);
-    transition: transform .45s var(--ease), border-color .3s var(--ease), background-color .3s var(--ease);
-  }
-  .contact a:hover { transform: translateX(4px); border-color: var(--accent); }
-  .contact .k { font: 400 .8rem/1.4 var(--font-mono); color: var(--muted); flex: none; }
-  .contact .v { font-weight: 600; overflow-wrap: anywhere; text-align: right; min-width: 0; }
-
-  footer { position: relative; z-index: 1; max-width: 52rem; margin: 0 auto; padding-block: 1.5rem 2.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; color: var(--muted); font-size: .88rem; }
-  footer a { color: inherit; transition: color .3s var(--ease); }
-  footer a:hover { color: var(--accent); }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition: none !important; }
-    html { scroll-behavior: auto; }
-    .reveal { transform: none; }
-  }
+/* ============ FERIENWOHNUNG: Reisemagazin, großes Foto, ruhige Serife, Heide und Moos ============ */
+#p-ferien{--w-paper:#f7f6f2;--w-ink:#26302b;--w-soft:#5f6862;--w-heather:#7b4f72;--w-moss:#5d6b3f;--w-line:#e2dfd6;
+  --ab-bg:#26302b;--ab-fg:#fff;--ab-btn:#3a4640;--ab-pri:#7b4f72;--ab-pri-fg:#fff;--ab-r:6px;
+  --m-bg:#ecebe3;--m-road:#fff;--m-water:#b7cfd2;--m-green:#d3dcc0;--m-block:#dedbd0;--m-pin:#7b4f72;--m-txt:#26302b;--m-r:6px;
+  background:var(--w-paper);color:var(--w-ink);font:17px/1.65 "Karla",system-ui,sans-serif}
+#p-ferien .subnav{gap:0;padding:0 16px;background:#f7f6f2f2;border-bottom:1px solid var(--w-line)}
+#p-ferien .subnav a{font-size:.92rem;font-weight:600;color:var(--w-soft);padding:13px 14px;border-bottom:2px solid transparent}
+#p-ferien .subnav a:hover{color:var(--w-heather);border-color:var(--w-heather)}
+#p-ferien h2{font:400 clamp(1.9rem,4.5vw,2.7rem)/1.1 "DM Serif Display",Georgia,serif;margin:0 0 10px}
+#p-ferien h2 em{color:var(--w-heather)}
+#p-ferien .kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--w-moss);margin:0 0 6px}
+#p-ferien section.c{padding-block:64px;border-top:1px solid var(--w-line)}
+#p-ferien .lede{max-width:60ch;color:var(--w-soft);margin:0 0 28px}
+.w-hero{position:relative;min-height:min(78vh,620px);display:flex;align-items:flex-end;background:linear-gradient(transparent 45%,#0006),url(bilder/fw_hero.jpg) center/cover,#5d6b3f;padding-block:40px}
+.w-hero .wrap{width:100%}
+.w-card{background:var(--w-paper);max-width:470px;padding:28px 30px;border-radius:2px}
+.w-card .badge{background:#7b4f7218;color:var(--w-heather);border-radius:3px}
+.w-card h1{font:400 clamp(2.2rem,6vw,3.3rem)/1.02 "DM Serif Display",Georgia,serif;margin:0 0 10px}
+.w-card h1 em{color:var(--w-heather)}
+.w-card p{margin:0;color:var(--w-soft)}
+.w-facts{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px;padding-top:14px;border-top:1px solid var(--w-line);font-size:.92rem}
+.w-facts b{font-variant-numeric:tabular-nums}
+.w-gal{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:760px){.w-gal{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}.w-gal figure:first-child{grid-row:span 2}}
+.w-gal figure{margin:0;position:relative;overflow:hidden;border-radius:4px;min-height:200px}
+.w-gal img{width:100%;height:100%;object-fit:cover;display:block}
+.w-gal figcaption{position:absolute;left:10px;bottom:10px;background:#f7f6f2e6;padding:3px 10px;border-radius:3px;font-size:.82rem;font-weight:600}
+.w-equip{display:grid;gap:4px 28px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));padding:0;margin:0;list-style:none}
+.w-equip li{padding:10px 0;border-bottom:1px solid var(--w-line)}
+.w-equip svg{flex:none;width:22px;height:22px;stroke:var(--w-moss);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.w-prices{display:grid;gap:28px;grid-template-columns:1fr}
+@media(min-width:860px){.w-prices{grid-template-columns:1fr 1.15fr}}
+.w-prices>div{min-width:0}
+.w-tbl{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.w-tbl th,.w-tbl td{text-align:left;padding:12px 8px 12px 0;border-bottom:1px solid var(--w-line);vertical-align:top}
+.w-tbl th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--w-soft)}
+.w-tbl td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+.w-tbl small{display:block;color:var(--w-soft);font-weight:400}
+.w-fine{font-size:.88rem;color:var(--w-soft);margin-top:12px}
+.w-cal{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.w-month h3{font:400 1.25rem "DM Serif Display",Georgia,serif;margin:0 0 8px}
+.w-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;font-size:.82rem;text-align:center;font-variant-numeric:tabular-nums}
+.w-days span{padding:6px 0;border-radius:3px;background:#fff}
+.w-days .h{background:none;color:var(--w-soft);font-weight:700;font-size:.72rem}
+.w-days .e{background:none}
+.w-days .b{background:var(--w-heather);color:#fff;text-decoration:line-through;text-decoration-color:#ffffff80}
+.w-legend{display:flex;gap:18px;font-size:.85rem;color:var(--w-soft);margin-top:10px}
+.w-legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:#fff;border:1px solid var(--w-line)}
+.w-legend i.b{background:var(--w-heather);border-color:var(--w-heather)}
+.w-walk{background:#fff;border-radius:6px;padding:26px 24px 18px;margin-bottom:44px}
+.w-walk h3{font:400 1.4rem "DM Serif Display",Georgia,serif;margin:0 0 4px}
+.w-scale{position:relative;margin:30px 0 8px;height:2px;background:var(--w-line)}
+.w-scale .tick{white-space:nowrap;position:absolute;top:8px;transform:translateX(-50%);font-size:.72rem;color:var(--w-soft);font-variant-numeric:tabular-nums}
+.w-scale .dot{position:absolute;top:-6px;width:14px;height:14px;border-radius:50%;background:var(--w-heather);border:3px solid #fff;box-shadow:0 0 0 1px var(--w-heather);transform:translateX(-50%)}
+.w-scale .home{background:var(--w-moss);box-shadow:0 0 0 1px var(--w-moss)}
+.w-places{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:0 28px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.w-places li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--w-line)}
+.w-places span{min-width:0}
+.w-places small{display:block;color:var(--w-soft);font-size:.82rem}
+.w-places b{white-space:nowrap;color:var(--w-heather);font-variant-numeric:tabular-nums}
+.w-places a{color:inherit}
+.w-tips{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.w-tip{margin:0}
+.w-tip img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px}
+.w-tip .km{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--w-moss)}
+.w-tip h3{font:400 1.3rem/1.15 "DM Serif Display",Georgia,serif;margin:4px 0 6px}
+.w-tip p{margin:0;font-size:.95rem;color:var(--w-soft)}
+.w-trails{display:grid;gap:20px}
+.w-trail{display:grid;grid-template-columns:1fr;background:#fff;border-radius:6px;overflow:hidden}
+@media(min-width:800px){.w-trail{grid-template-columns:300px 1fr}}
+.w-trail img{width:100%;height:100%;min-height:200px;object-fit:cover;display:block}
+.w-trail>div{padding:22px 24px;min-width:0}
+.w-trail h3{font:400 1.45rem "DM Serif Display",Georgia,serif;margin:0 0 4px}
+.w-trail p{margin:0 0 12px;color:var(--w-soft);font-size:.95rem}
+.w-stats{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.88rem;margin-bottom:12px}
+.w-stats span{color:var(--w-soft)}
+.w-stats b{color:var(--w-ink);font-variant-numeric:tabular-nums;display:block;font-size:1.05rem}
+.w-level{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:3px;margin-left:8px;vertical-align:4px}
+.w-level.l{background:#e4ead8;color:#4b5a2e}.w-level.m{background:#f0e3ec;color:#7b4f72}
+.w-prof{display:block;width:100%;height:64px}
+.w-prof-l{display:flex;justify-content:space-between;font-size:.72rem;color:var(--w-soft);font-variant-numeric:tabular-nums}
+.w-form{display:grid;gap:14px;grid-template-columns:1fr;max-width:760px;background:#fff;padding:26px;border-radius:6px}
+@media(min-width:640px){.w-form{grid-template-columns:1fr 1fr}.w-form .full{grid-column:1/-1}}
+.w-form label{display:grid;gap:4px;font-size:.85rem;font-weight:600;color:var(--w-soft)}
+.w-form input,.w-form select,.w-form textarea{font:inherit;font-size:1rem;padding:11px 12px;border:1px solid #cfcabd;border-radius:4px;background:var(--w-paper);color:var(--w-ink);width:100%}
+.w-form button{all:unset;cursor:pointer;justify-self:start;background:var(--w-heather);color:#fff;font-weight:700;padding:13px 22px;border-radius:4px}
+.w-form button:focus-visible{outline:2px solid var(--w-ink);outline-offset:2px}
+#p-ferien .bfoot{background:#26302b;color:#dfe3dc}
 </style>
 </head>
 <body>
-<div class="aura" aria-hidden="true"><span class="a"></span><span class="b"></span><span class="c"></span></div>
 
-<nav class="nav" aria-label="Hauptnavigation">
-  <a class="brand" href="#top">meixner<b>.</b>club</a>
-  <ul class="links">
-    <li><a href="#ueber">Über mich</a></li>
-    <li><a href="#werdegang">Werdegang</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
-  </ul>
-  <button class="theme" id="theme" type="button" aria-label="Hell oder dunkel umschalten">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-  </button>
-</nav>
+<header class="top" id="top">
+  <div class="top-in">
+    <div class="brand"><b>Jan Meixner</b><span>Websites für Betriebe rund um Kirchzell</span></div>
+    <nav class="tabs" role="tablist" aria-label="Bereiche">
+      <button class="tab" role="tab" data-tab="ueber">Über mich</button>
+      <button class="tab" role="tab" data-tab="gasthaus">Gasthaus</button>
+      <button class="tab" role="tab" data-tab="handwerk">Handwerk</button>
+      <button class="tab" role="tab" data-tab="friseur">Friseur</button>
+      <button class="tab" role="tab" data-tab="physio">Physiotherapie</button>
+      <button class="tab" role="tab" data-tab="ferien">Ferienwohnung</button>
+    </nav>
+  </div>
+</header>
 
-<main class="wrap" id="top">
-  <section class="hero">
-    <span class="status"><span class="dot"></span> IT-Systemadministrator bei ERBACHER the food family</span>
-    <h1>Hi, ich bin <span class="grad">Jan Meixner</span>.</h1>
-    <p class="role">Ich sorge dafür, dass IT zuverlässig läuft, verständlich bleibt und den Menschen hilft, die jeden Tag damit arbeiten. <strong>Aus Kirchzell in Bayern.</strong></p>
-    <div class="cta">
-      <a class="btn primary" href="#kontakt">Kontakt aufnehmen <span class="arrow">→</span></a>
-      <a class="btn" href="https://www.linkedin.com/in/jan-meixner-975916289" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
-    </div>
-  </section>
-
-  <div class="grid">
-    <section class="card reveal" id="ueber" aria-labelledby="h-about">
-      <h2 id="h-about">Über mich</h2>
-      <p class="lead">Gute IT merkt man oft erst, wenn sie fehlt. Mein Ziel ist, dass sie einfach funktioniert.</p>
-      <p>Seit 2020 bin ich IT-Systemadministrator bei ERBACHER the food family in Kleinheubach. Dort betreue ich Microsoft 365, Windows-Umgebungen und die IT mehrerer Standorte, von Benutzerkonten über mobile Geräte bis zu geschäftskritischen Anwendungen. Als AI Ambassador helfe ich außerdem Kolleginnen und Kollegen dabei, KI-Werkzeuge sinnvoll im Arbeitsalltag einzusetzen.</p>
-      <p>Diese Seite ist mein erstes eigenes Projekt mit Claude Code und wächst Stück für Stück weiter.</p>
-    </section>
-
-    <section class="card half reveal" id="werdegang" aria-labelledby="h-cv">
-      <h2 id="h-cv">Werdegang</h2>
-      <ol class="timeline">
-        <li><span class="when">08/2020 – heute</span><strong>IT-Systemadministrator</strong><span class="sub">ERBACHER the food family · Kleinheubach</span></li>
-        <li><span class="when">08/2017 – 06/2020</span><strong>Staatlich geprüfter Informationstechnischer Assistent</strong><span class="sub">Bergisches Berufskolleg Wipperfürth und Wermelskirchen</span></li>
-        <li><span class="when">09/2017 – 03/2018</span><strong>Information Technology Specialist</strong><span class="sub">INOVACOM</span></li>
-      </ol>
-    </section>
-
-    <section class="card half reveal" aria-labelledby="h-skills">
-      <h2 id="h-skills">Schwerpunkte</h2>
-      <ul class="chips">
-        <li>Microsoft 365</li><li>Microsoft Entra ID</li><li>Microsoft Teams</li><li>Exchange Online</li><li>SharePoint Online</li><li>Active Directory</li><li>Windows Server</li><li>IT-Service-Management</li><li>Mobile Geräte &amp; Scanner</li><li>KI im Arbeitsalltag</li>
-      </ul>
-    </section>
-
-    <section class="card reveal" id="kontakt" aria-labelledby="h-contact">
-      <h2 id="h-contact">Kontakt</h2>
-      <ul class="contact">
-        <li><a href="mailto:janmeixner1@gmx.de"><span class="k">E-Mail</span><span class="v">janmeixner1@gmx.de</span></a></li>
-        <li><a href="https://www.linkedin.com/in/jan-meixner-975916289" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">Jan Meixner</span></a></li>
-      </ul>
+<main>
+<!-- ÜBER MICH -->
+<div class="panel" id="p-ueber" role="tabpanel" data-panel="ueber">
+  <nav class="subnav"><a href="#ueber-hallo">Hallo</a><a href="#ueber-was">Was ich mache</a><a href="#ueber-ablauf">So läuft's</a><a href="#ueber-beispiele">Beispiele</a><a href="#ueber-kontakt">Kontakt</a></nav>
+  <div class="wrap">
+    <section class="u-hero" id="ueber-hallo">
+      <div>
+        <h1>Hallo, ich bin <span class="name">Jan.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C40 4 80 18 120 9 S180 6 197 11"/></svg></span></h1>
+        <p class="u-rot">Ich baue Websites für <span class="u-word" id="u-word">Gasthäuser</span></p>
+        <p class="lead">Ich komme aus Watterbach und bin hier im Odenwald zu Hause. Mir gefällt, wie viele gute kleine Betriebe es bei uns gibt, und mich stört, wie selten man sie im Internet richtig findet.</p>
+        <p class="lead">Deshalb mache ich nebenbei Websites für Betriebe aus der Gegend. Persönlich, vor Ort und ohne Fachchinesisch.</p>
+        <div class="u-btns"><a class="u-btn pri" href="#ueber-beispiele" data-jump>Beispiele ansehen</a><a class="u-btn" href="#ueber-kontakt" data-jump>Schreib mir</a></div>
+      </div>
+      <figure class="u-visual"><span class="ph"><img src="bilder/jan.jpg" alt="Jan Meixner" width="900" height="720"></span><figcaption>Jan Meixner, Watterbach</figcaption></figure>
     </section>
   </div>
+  <div class="u-strip"><ul><li>Persönlich vor Ort</li><li>Sie pflegen Ihre Seite selbst</li><li>Kein Fachchinesisch</li></ul></div>
+  <div class="wrap">
+    <section class="u-sec" id="ueber-was">
+      <p class="u-label"><b>01</b>Was ich mache</p>
+      <div>
+        <h2>Ihre Website, endlich zeitgemäß</h2>
+        <div class="u-svc">
+          <article><h3>Neue Website</h3><p>Für Betriebe, die noch keine eigene Seite haben oder nur einen Eintrag bei Google.</p><ul><li>Gut lesbar auf dem Handy</li><li>Öffnungszeiten, Anfahrt, Kontakt</li></ul></article>
+          <article><h3>Alte Seite auffrischen</h3><p>Ihre Seite ist zehn Jahre alt? Ich bringe Inhalt und Technik auf den heutigen Stand.</p><ul><li>Sicher mit https</li><li>Impressum und Datenschutz</li></ul></article>
+          <article><h3>Pflege und Hilfe</h3><p>Sie ändern Texte und Bilder selbst. Wenn doch mal etwas klemmt, bin ich erreichbar.</p><ul><li>Einweisung vor Ort</li><li>Auf Wunsch laufende Pflege</li></ul></article>
+        </div>
+      </div>
+    </section>
+    <section class="u-sec" id="ueber-ablauf">
+      <p class="u-label"><b>02</b>So läuft's</p>
+      <div>
+        <h2>In vier Schritten online</h2>
+        <ol class="u-steps">
+          <li><b>Kennenlernen</b><span>Ich komme bei Ihnen vorbei und höre zu.</span></li>
+          <li><b>Entwurf</b><span>Sie sehen Ihre neue Startseite, bevor Sie etwas zahlen.</span></li>
+          <li><b>Fertigstellen</b><span>Eine Korrekturrunde, dann geht die Seite online.</span></li>
+          <li><b>Einweisung</b><span>Ich zeige Ihnen, wie Sie selbst Dinge ändern.</span></li>
+        </ol>
+      </div>
+    </section>
+    <section class="u-sec" id="ueber-beispiele">
+      <p class="u-label"><b>03</b>Beispiele</p>
+      <div>
+        <h2>Jeder Betrieb ist anders, jede Seite auch</h2>
+        <p class="u-note">Fünf erfundene Betriebe, jeder mit eigenem Stil. Die Fotos sind freie Stockfotos.</p>
+        <div class="u-shots"><button class="u-shot" data-go="gasthaus"><span class="fr"><span class="pic" style="background-image:url(bilder/g_hero.jpg)"></span></span><span class="cap"><b>Gasthaus</b><span>klassisch, wie eine Speisekarte</span></span></button><button class="u-shot" data-go="handwerk"><span class="fr"><span class="pic" style="background-image:url(bilder/h_hero.jpg)"></span></span><span class="cap"><b>Handwerk</b><span>kantig und klar</span></span></button><button class="u-shot" data-go="friseur"><span class="fr"><span class="pic" style="background-image:url(bilder/f_hero.jpg)"></span></span><span class="cap"><b>Friseur</b><span>dunkel und modern</span></span></button><button class="u-shot" data-go="physio"><span class="fr"><span class="pic" style="background-image:url(bilder/p_hero.jpg)"></span></span><span class="cap"><b>Physiotherapie</b><span>hell und ruhig</span></span></button><button class="u-shot" data-go="ferien"><span class="fr"><span class="pic" style="background-image:url(bilder/fw_hero.jpg)"></span></span><span class="cap"><b>Ferienwohnung</b><span>wie ein Reiseheft</span></span></button></div>
+      </div>
+    </section>
+    <section class="u-end" id="ueber-kontakt">
+      <div class="u-cta">
+        <div><h2>Lust auf eine neue Website?</h2><p>Schreiben Sie mir oder rufen Sie an. Das erste Gespräch ist kostenlos und unverbindlich, gern bei Ihnen vor Ort.</p></div>
+        <div class="u-contact"><div><small>E-Mail</small><strong><a href="mailto:info@meixner.club">info@meixner.club</a></strong></div><div><small>Telefon</small><strong><a href="tel:+491739075656">0173 907 5656</a></strong></div></div>
+      </div>
+    </section>
+    <footer class="shell"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
+  </div>
+</div>
+
+<!-- GASTHAUS -->
+<div class="panel" id="p-gasthaus" role="tabpanel" data-panel="gasthaus" hidden>
+  <p class="demo">Beispielseite: erfundener Betrieb, Fotos von Pexels.</p>
+  <nav class="subnav"><a href="#g-start">Willkommen</a><a href="#g-karte">Speisekarte</a><a href="#g-biergarten">Biergarten</a><a href="#g-zeiten">Öffnungszeiten</a><a href="#g-anfahrt">Anfahrt</a></nav>
+  <section class="g-hero" id="g-start"><div class="wrap">
+    <h1>Gasthaus zur Linde</h1>
+    <div class="g-since">seit 1962</div>
+    <p>Fränkisch-odenwälder Küche, Wild aus heimischer Jagd und sonntags Kuchen aus dem eigenen Ofen.</p>
+  </div></section>
+  <section class="c" id="g-karte"><div class="wrap">
+    <div class="g-orn" aria-hidden="true"></div>
+    <h2>Unsere Speisekarte</h2>
+    <p style="font-style:italic;margin:0 0 28px">Wechselt mit der Jahreszeit</p>
+    <div class="g-card">
+      <h3>Suppen &amp; Vorspeisen</h3>
+      <div class="g-dish"><span>Leberknödelsuppe</span><i></i><em>5,20 €</em></div>
+      <div class="g-dish"><span>Odenwälder Kartoffelsuppe<small>mit Speck und Majoran</small></span><i></i><em>5,80 €</em></div>
+      <h3>Hauptgerichte</h3>
+      <div class="g-dish"><span>Wildgulasch vom Reh<small>mit Spätzle und Preiselbeeren</small></span><i></i><em>16,90 €</em></div>
+      <div class="g-dish"><span>Schäufele<small>mit Kloß und Krautsalat</small></span><i></i><em>15,50 €</em></div>
+      <div class="g-dish"><span>Forelle Müllerin Art</span><i></i><em>17,80 €</em></div>
+      <div class="g-dish"><span>Käsespätzle mit Röstzwiebeln</span><i></i><em>12,40 €</em></div>
+      <h3>Nachtisch</h3>
+      <div class="g-dish"><span>Hausgemachter Apfelstrudel</span><i></i><em>5,90 €</em></div>
+    </div>
+  </div></section>
+  <section class="c" id="g-biergarten"><div class="wrap g-split">
+    <figure class="g-pic"><img src="bilder/g_garten.jpg" alt="Biergarten mit Holztischen unter einer alten Linde" loading="lazy"><figcaption>Biergarten unter der Linde</figcaption></figure>
+    <div>
+      <h2>Der Biergarten</h2>
+      <p>Bei schönem Wetter sitzen Sie unter unserer über hundert Jahre alten Linde. Für Kinder gibt es einen Sandkasten, für Radfahrer Abstellplätze direkt am Eingang.</p>
+      <p>Familienfeiern bis 60 Personen richten wir gern im Saal aus.</p>
+    </div>
+  </div></section>
+  <section class="c" id="g-zeiten"><div class="wrap">
+    <div class="g-orn" aria-hidden="true"></div>
+    <h2>Öffnungszeiten</h2>
+    <p style="font-style:italic;margin:0 0 24px">Hauptstraße 1, 63930 Musterdorf · Reservierung 0000 / 123456</p>
+    <div class="g-hours"><table>
+      <tr><td>Mo – Di</td><td>Ruhetag</td></tr>
+      <tr><td>Mi – Fr</td><td>11:30 – 14:00 · 17:30 – 22:00</td></tr>
+      <tr><td>Samstag</td><td>11:30 – 22:00</td></tr>
+      <tr><td>Sonntag</td><td>11:00 – 20:00</td></tr>
+    </table></div>
+  </div></section>
+  <section class="c" id="g-anfahrt"><div class="wrap">
+    <div class="g-orn" aria-hidden="true"></div>
+    <h2>Anfahrt</h2>
+    <p style="font-style:italic;margin:0 0 24px">Mitten im Ort, gegenüber der Kirche</p>
+    <div style="text-align:left"><div class="loc"><div class="map" data-label="Gasthaus zur Linde"></div><div><b>Gasthaus zur Linde</b><br>Hauptstraße 1<br>63930 Musterdorf<br><br>Parkplätze direkt am Haus, Bushaltestelle „Kirche“ 50 m. Radfahrer finden Abstellplätze am Biergarten.<br><a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Hauptstraße+1,+63930+Musterdorf" target="_blank" rel="noopener"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route planen</a></div></div></div>
+  </div></section>
+  <footer class="bfoot"><div class="wrap"><div class="cols"><div><b>Gasthaus zur Linde</b>Hauptstraße 1<br>63930 Musterdorf</div><div><b>Öffnungszeiten</b>Mi – Fr 11:30 – 14:00, 17:30 – 22:00<br>Sa 11:30 – 22:00 · So 11:00 – 20:00<br>Mo – Di Ruhetag</div><div><b>Kontakt</b>Tel. 0000 / 123456<br>info@gasthaus-beispiel.de</div></div><div class="legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><span>Beispielseite von Jan Meixner. Name, Adresse und Preise sind erfunden, Fotos: Pexels (frei nutzbar).</span></div></div></footer>
+  <nav class="actbar" aria-label="Schnellkontakt"><a class="pri" href="tel:0000123456"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Anrufen</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hauptstraße+1,+63930+Musterdorf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route</a></nav>
+</div>
+
+<!-- HANDWERK -->
+<div class="panel" id="p-handwerk" role="tabpanel" data-panel="handwerk" hidden>
+  <p class="demo">Beispielseite: erfundener Betrieb, Fotos von Pexels.</p>
+  <nav class="subnav"><a href="#h-start">Start</a><a href="#h-leistungen">Leistungen</a><a href="#h-referenzen">Referenzen</a><a href="#h-team">Team</a><a href="#h-ausbildung">Ausbildung</a><a href="#h-anfrage">Anfrage</a><a href="#h-anfahrt">Anfahrt</a></nav>
+  <section class="h-hero" id="h-start">
+    <div class="h-hero-l">
+      <h1>Kern Bau &amp; Ausbau</h1>
+      <p>Ihr Meisterbetrieb für Umbau, Sanierung und Innenausbau im Odenwald. Ein Ansprechpartner, ein fester Termin, saubere Baustelle.</p>
+      <a class="h-btn" href="#h-anfrage">Angebot anfragen</a>
+    </div>
+    <div class="h-facts">
+      <div><span>Gegründet</span><b>1987</b></div>
+      <div><span>Mitarbeiter</span><b>14</b></div>
+      <div><span>Einsatzgebiet</span><b>40 km</b></div>
+    </div>
+  </section>
+  <section class="c" id="h-leistungen"><div class="wrap">
+    <h2>Leistungen</h2>
+    <div class="h-list">
+      <div class="h-row"><b>Sanierung</b><span>Altbau, Fachwerk und Feuchteschäden, von der Bestandsaufnahme bis zur Übergabe.</span><small>Privat &amp; Gewerbe</small></div>
+      <div class="h-row"><b>Innenausbau</b><span>Trockenbau, Dachausbau, Böden und Türen aus einer Hand.</span><small>Festpreis möglich</small></div>
+      <div class="h-row"><b>Bad &amp; Barrierefreiheit</b><span>Bodengleiche Duschen und altersgerechte Umbauten, mit Hilfe beim Förderantrag.</span><small>KfW-Förderung</small></div>
+      <div class="h-row"><b>Reparaturdienst</b><span>Kleine Aufträge und schnelle Hilfe nach Sturm oder Wasserschaden.</span><small>Innerhalb 48 h</small></div>
+    </div>
+  </div></section>
+  <section class="c" id="h-referenzen"><div class="wrap">
+    <h2>Referenzen</h2>
+    <div class="h-refs">
+      <div class="h-ref h-r1"><b>Fachwerkhaus</b><span>Innenausbau · Amorbach · 2024</span></div>
+      <div class="h-ref h-r2"><b>Dachausbau</b><span>Zwei Kinderzimmer · Kirchzell · 2024</span></div>
+      <div class="h-ref h-r3"><b>Landgasthof</b><span>Gästezimmer neu · Mudau · 2023</span></div>
+      <div class="h-ref h-r4"><b>Barrierefreies Bad</b><span>Umbau in 9 Tagen · Weilbach · 2023</span></div>
+    </div>
+  </div></section>
+  <section class="c" id="h-team"><div class="wrap">
+    <h2>Ihre Ansprechpartner</h2>
+    <div class="team">
+      <figure><img src="bilder/t_h1.jpg" alt="Porträt Sabine Kern" loading="lazy"><b>Sabine Kern</b><span>Inhaberin, Maurermeisterin</span><span>Angebote und Beratung</span></figure>
+      <figure><img src="bilder/t_h2.jpg" alt="Porträt Lena Hofmann" loading="lazy"><b>Lena Hofmann</b><span>Bauleitung</span><span>Ihre Ansprechpartnerin auf der Baustelle</span></figure>
+      <figure><img src="bilder/t_h3.jpg" alt="Porträt Felix Brand" loading="lazy"><b>Felix Brand</b><span>Vorarbeiter Innenausbau</span><span>Trockenbau, Böden, Türen</span></figure>
+    </div>
+  </div></section>
+  <section class="c" id="h-ausbildung"><div class="wrap">
+    <h2>Ausbildung</h2>
+    <div class="job">
+      <div>
+        <span class="tag">Ab 1. September 2027 · 1 Platz frei</span>
+        <h3>Ausbildung Maurer/in (m/w/d)</h3>
+        <p style="margin:0">Drei Jahre, in denen du lernst, wie aus einem alten Haus wieder ein Zuhause wird. Berufsschule in Miltenberg, Praxis bei uns auf echten Baustellen in der Region.</p>
+      </div>
+      <div>
+        <ul>
+          <li>Übertarifliche Ausbildungsvergütung</li>
+          <li>Eigenes Werkzeug und Arbeitskleidung</li>
+          <li>Führerschein-Zuschuss im 2. Lehrjahr</li>
+          <li>Übernahme nach bestandener Prüfung</li>
+        </ul>
+        <p style="margin:14px 0 0">Bewerbung formlos an Sabine Kern, Tel. 0000 / 778899. Ein Praktikum vorab ist jederzeit möglich.</p>
+      </div>
+    </div>
+  </div></section>
+  <section class="c" id="h-anfrage"><div class="wrap">
+    <h2>Anfrage</h2>
+    <form class="h-form" id="h-form">
+      <label>Name<input id="h-name" autocomplete="name" placeholder="Max Mustermann"></label>
+      <label>Telefon<input id="h-tel" autocomplete="tel" placeholder="0000 / 000000"></label>
+      <label class="full">Worum geht es?<select id="h-art"><option>Sanierung</option><option>Innenausbau</option><option>Bad</option><option>Reparatur</option></select></label>
+      <label class="full">Kurze Beschreibung<textarea id="h-text" rows="3" placeholder="z. B. Dachboden zu zwei Zimmern ausbauen"></textarea></label>
+      <button type="submit">Anfrage senden</button>
+      <p class="h-ok full" id="h-ok" hidden>Beispielformular: Auf der echten Seite käme die Anfrage jetzt per E-Mail beim Betrieb an.</p>
+    </form>
+  </div></section>
+  <section class="c" id="h-anfahrt"><div class="wrap">
+    <h2>Anfahrt</h2>
+    <div class="loc"><div class="map" data-label="Kern Bau & Ausbau"></div><div><b>Kern Bau &amp; Ausbau</b><br>Industriestraße 12<br>63930 Musterdorf<br><br>Büro und Lager im Gewerbegebiet Nord. Besprechungen gern nach Termin, auch bei Ihnen vor Ort.<br><a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Industriestraße+12,+63930+Musterdorf" target="_blank" rel="noopener"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route planen</a></div></div>
+  </div></section>
+  <footer class="bfoot"><div class="wrap"><div class="cols"><div><b>Kern Bau &amp; Ausbau</b>Industriestraße 12<br>63930 Musterdorf</div><div><b>Öffnungszeiten</b>Büro Mo – Do 7:00 – 16:30<br>Fr 7:00 – 13:00</div><div><b>Kontakt</b>Tel. 0000 / 778899<br>info@bau-beispiel.de</div></div><div class="legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><span>Beispielseite von Jan Meixner. Name und Angaben sind erfunden, Fotos: Pexels (frei nutzbar).</span></div></div></footer>
+  <nav class="actbar" aria-label="Schnellkontakt"><a class="pri" href="tel:0000778899"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Anrufen</a><a href="#h-anfrage" data-jump><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Anfrage</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Industriestraße+12,+63930+Musterdorf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route</a></nav>
+</div>
+
+<!-- FRISEUR -->
+<div class="panel" id="p-friseur" role="tabpanel" data-panel="friseur" hidden>
+  <p class="demo">Beispielseite: erfundener Betrieb, Fotos von Pexels.</p>
+  <nav class="subnav"><a href="#f-start">Start</a><a href="#f-looks">Looks</a><a href="#f-preise">Preise</a><a href="#f-team">Team</a><a href="#f-jobs">Jobs</a><a href="#f-termin">Termin &amp; Anfahrt</a></nav>
+  <section class="f-hero" id="f-start"><div class="wrap">
+    <h1>Salon <span>Schnittwerk</span></h1>
+    <p>Haarschnitt, Farbe und Bartpflege in Musterdorf. Mit Termin und ohne Wartezeit.</p>
+  </div><div class="f-side" aria-hidden="true">Hair · Color · Barber</div></section>
+  <section class="c" id="f-looks"><div class="wrap">
+    <h2>looks</h2>
+    <div class="f-strip" tabindex="0" aria-label="Beispiel-Looks, seitlich wischen">
+      <div class="f-look f-l1">Long Bob</div><div class="f-look f-l2">Fade &amp; Bart</div><div class="f-look f-l3">Balayage</div><div class="f-look f-l4">Pixie Cut</div>
+    </div>
+  </div></section>
+  <section class="c" id="f-preise"><div class="wrap">
+    <h2>preise</h2>
+    <div class="f-prices">
+      <div><h3>Damen</h3>
+        <div><span>Waschen, Schneiden, Föhnen</span><span>ab 42 €</span></div>
+        <div><span>Farbe / Strähnen</span><span>ab 55 €</span></div>
+        <div><span>Hochsteckfrisur</span><span>ab 49 €</span></div>
+      </div>
+      <div><h3>Herren &amp; Kinder</h3>
+        <div><span>Herrenschnitt</span><span>24 €</span></div>
+        <div><span>Bart trimmen</span><span>12 €</span></div>
+        <div><span>Kinder bis 12 Jahre</span><span>15 €</span></div>
+      </div>
+    </div>
+  </div></section>
+  <section class="c" id="f-team"><div class="wrap">
+    <h2>team</h2>
+    <div class="f-team">
+      <div><i>L</i><b>Lisa</b><span>Inhaberin, Meisterin</span></div>
+      <div><i>T</i><b>Tom</b><span>Herren &amp; Bart</span></div>
+      <div><i>M</i><b>Mia</b><span>Azubi, 2. Lehrjahr</span></div>
+    </div>
+  </div></section>
+  <section class="c" id="f-jobs"><div class="wrap">
+    <h2>jobs</h2>
+    <div class="job">
+      <div>
+        <span class="tag">Teilzeit · 20 – 25 Std.</span>
+        <h3>Friseur/in (m/w/d)</h3>
+        <p style="margin:0">Du hast deine Gesellenprüfung und Lust auf ein kleines Team, in dem man sich gegenseitig hilft. Arbeitszeiten stimmen wir gemeinsam ab, gern vormittags.</p>
+      </div>
+      <div>
+        <ul>
+          <li>Feste Arbeitstage, kein Spätdienst nach 18 Uhr</li>
+          <li>Umsatzbeteiligung und Trinkgeld für dich</li>
+          <li>Zwei Weiterbildungen im Jahr bezahlt</li>
+        </ul>
+        <p style="margin:14px 0 0">Melde dich bei Lisa: 0000 / 112233 oder komm einfach vorbei.</p>
+      </div>
+    </div>
+  </div></section>
+  <section class="c" id="f-termin"><div class="wrap">
+    <h2>termin &amp; anfahrt</h2>
+    <div class="f-cta" style="margin-bottom:32px">
+      <span class="f-round">einfach<br>anrufen</span>
+      <p style="margin:0">Termine telefonisch unter 0000 / 112233<br>Di – Fr 9 – 18 Uhr · Sa 8 – 13 Uhr</p>
+    </div>
+    <div class="loc"><div class="map" data-label="Salon Schnittwerk"></div><div><b>Salon Schnittwerk</b><br>Marktplatz 4<br>63930 Musterdorf<br><br>Direkt am Marktplatz, Parken hinter dem Rathaus.<br><a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Marktplatz+4,+63930+Musterdorf" target="_blank" rel="noopener"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route planen</a></div></div>
+  </div></section>
+  <footer class="bfoot"><div class="wrap"><div class="cols"><div><b>Salon Schnittwerk</b>Marktplatz 4<br>63930 Musterdorf</div><div><b>Öffnungszeiten</b>Di – Fr 9 – 18 Uhr<br>Sa 8 – 13 Uhr<br>So – Mo geschlossen</div><div><b>Kontakt</b>Tel. 0000 / 112233<br>hallo@salon-beispiel.de</div></div><div class="legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><span>Beispielseite von Jan Meixner. Name und Preise sind erfunden, Fotos: Pexels (frei nutzbar).</span></div></div></footer>
+  <nav class="actbar" aria-label="Schnellkontakt"><a class="pri" href="tel:0000112233"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Anrufen</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Marktplatz+4,+63930+Musterdorf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route</a></nav>
+</div>
+
+<!-- PHYSIO -->
+<div class="panel" id="p-physio" role="tabpanel" data-panel="physio" hidden>
+  <p class="demo">Beispielseite: erfundener Betrieb, Fotos von Pexels.</p>
+  <nav class="subnav"><a href="#ph-start">Start</a><a href="#ph-behandlungen">Behandlungen</a><a href="#ph-team">Team</a><a href="#ph-ablauf">So geht's</a><a href="#ph-fragen">Fragen</a><a href="#ph-jobs">Jobs</a><a href="#ph-kontakt">Kontakt</a></nav>
+  <div class="wrap">
+  <section class="p-hero" id="ph-start">
+    <div>
+      <h1>Physiotherapie <span>am Bach</span></h1>
+      <p>Wieder schmerzfrei bewegen. Für alle Kassen und privat, mit Hausbesuchen in der Umgebung.</p>
+      <div class="p-appt">
+      <small>Freie Termine diese Woche</small>
+      <b>Mittwoch &amp; Freitag</b>
+      <div class="p-slots"><span>Mi 08:30</span><span>Mi 16:00</span><span>Fr 11:15</span><span>Fr 17:30</span></div>
+      <span style="color:#46667a;font-size:.92rem">Telefonisch reservieren: 0000 / 445566</span>
+    </div>
+    </div>
+    <div class="p-visual"><img src="bilder/p_hero.jpg" alt="Physiotherapeutin behandelt die Schulter einer Patientin"></div>
+  </section>
+  </div>
+  <section class="c" id="ph-behandlungen" style="background:#eaf5f9"><div class="wrap">
+    <h2>Behandlungen</h2>
+    <p class="p-intro">Wir nehmen uns für jede Behandlung Zeit und erklären, was wir tun.</p>
+    <div class="p-cards">
+      <div><b>Krankengymnastik</b><span>Nach Operationen, Unfällen oder bei Rückenschmerzen.</span></div>
+      <div><b>Manuelle Therapie</b><span>Gezielte Griffe für blockierte Gelenke und Wirbel.</span></div>
+      <div><b>Lymphdrainage</b><span>Sanfte Entstauung, auch als Hausbesuch.</span></div>
+      <div><b>Gerätetraining</b><span>Muskelaufbau unter Anleitung im eigenen Trainingsraum.</span></div>
+    </div>
+  </div></section>
+  <section class="c" id="ph-team"><div class="wrap">
+    <h2>Unser Team</h2>
+    <p class="p-intro">Bei uns behandelt Sie jedes Mal dieselbe Person, wenn Sie das möchten.</p>
+    <div class="team">
+      <figure><img src="bilder/t_p1.jpg" alt="Porträt Anna Bach" loading="lazy"><b>Anna Bach</b><span>Inhaberin, Physiotherapeutin</span><span>Lymphdrainage, Rücken</span></figure>
+      <figure><img src="bilder/t_p2.jpg" alt="Porträt Daniel Weber" loading="lazy"><b>Daniel Weber</b><span>Physiotherapeut</span><span>Manuelle Therapie, Sport</span></figure>
+      <figure><img src="bilder/t_p3.jpg" alt="Porträt Julia Roth" loading="lazy"><b>Julia Roth</b><span>Empfang und Termine</span><span>Ihre erste Ansprechpartnerin</span></figure>
+    </div>
+  </div></section>
+  <section class="c" id="ph-ablauf"><div class="wrap">
+    <h2>So kommen Sie zu uns</h2>
+    <p class="p-intro">In drei Schritten zur ersten Behandlung.</p>
+    <img class="p-room" src="bilder/p_raum.jpg" alt="Heller Trainingsraum der Praxis" loading="lazy">
+    <ol class="p-steps">
+      <li><b>Rezept holen</b><span>Ihr Arzt stellt eine Heilmittelverordnung aus.</span></li>
+      <li><b>Anrufen</b><span>Wir finden gemeinsam passende Termine.</span></li>
+      <li><b>Loslegen</b><span>Bringen Sie Rezept und ein Handtuch mit.</span></li>
+    </ol>
+  </div></section>
+  <section class="c" id="ph-fragen" style="background:#eaf5f9"><div class="wrap">
+    <h2>Häufige Fragen</h2>
+    <p class="p-intro">Was Patienten uns am Telefon oft fragen.</p>
+    <div class="p-faq">
+      <details><summary>Brauche ich ein Rezept?</summary><p>Für die Abrechnung mit der Kasse ja. Als Selbstzahler können Sie auch ohne Rezept kommen.</p></details>
+      <details><summary>Ist die Praxis barrierefrei?</summary><p>Ja, alles liegt im Erdgeschoss, Parkplätze sind direkt vor der Tür.</p></details>
+      <details><summary>Machen Sie Hausbesuche?</summary><p>Ja, in Musterdorf und den Nachbarorten, wenn der Arzt das auf dem Rezept vermerkt.</p></details>
+    </div>
+  </div></section>
+  <section class="c" id="ph-jobs"><div class="wrap">
+    <h2>Wir suchen Verstärkung</h2>
+    <p class="p-intro">Unser Team wächst. Vielleicht mit Ihnen?</p>
+    <div class="job">
+      <div>
+        <span class="tag">Vollzeit · ab sofort</span>
+        <h3>Physiotherapeut/in (m/w/d)</h3>
+        <p style="margin:0;color:#46667a">Sie haben Ihr Examen in der Tasche und möchten in einer ruhigen Praxis arbeiten, in der man sich Zeit für Patienten nimmt. Berufsanfänger sind willkommen.</p>
+      </div>
+      <div>
+        <ul>
+          <li>30 Minuten pro Behandlung statt 20</li>
+          <li>Bezahlte Fortbildung, z. B. Manuelle Therapie</li>
+          <li>30 Tage Urlaub, keine Samstage</li>
+          <li>Dienstfahrrad oder Tankgutschein</li>
+        </ul>
+        <p style="margin:14px 0 0">Kurze Bewerbung an Anna Bach, Tel. 0000 / 445566.</p>
+      </div>
+    </div>
+  </div></section>
+  <section class="c" id="ph-kontakt"><div class="wrap">
+    <h2>Kontakt und Anfahrt</h2>
+    <p class="p-intro">Barrierefrei im Erdgeschoss, Parkplätze direkt vor der Tür.</p>
+    <div><div class="loc"><div class="map" data-label="Physiotherapie am Bach"></div><div><b>Physiotherapie am Bach</b><br>Bachweg 3<br>63930 Musterdorf<br><br>Fünf Minuten zu Fuß vom Bahnhof, direkt am Bach entlang.<br><a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bachweg+3,+63930+Musterdorf" target="_blank" rel="noopener"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route planen</a></div></div></div>
+  </div></section>
+  <footer class="bfoot"><div class="wrap"><div class="cols"><div><b>Physiotherapie am Bach</b>Bachweg 3<br>63930 Musterdorf</div><div><b>Öffnungszeiten</b>Mo – Fr 7:30 – 19:00<br>Termine nach Vereinbarung</div><div><b>Kontakt</b>Tel. 0000 / 445566<br>praxis@physio-beispiel.de</div></div><div class="legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><span>Beispielseite von Jan Meixner. Name und Angaben sind erfunden, Fotos: Pexels (frei nutzbar).</span></div></div></footer>
+  <nav class="actbar" aria-label="Schnellkontakt"><a class="pri" href="tel:0000445566"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Anrufen</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bachweg+3,+63930+Musterdorf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route</a></nav>
+</div>
+
+<!-- FERIENWOHNUNG -->
+<div class="panel" id="p-ferien" role="tabpanel" data-panel="ferien" hidden>
+  <p class="demo">Beispielseite: erfundener Betrieb, Fotos von Pexels.</p>
+  <nav class="subnav"><a href="#w-start">Start</a><a href="#w-wohnung">Wohnung</a><a href="#w-preise">Preise &amp; Belegung</a><a href="#w-umgebung">Umgebung</a><a href="#w-wandern">Wandern</a><a href="#w-anfrage">Anfrage</a><a href="#w-anfahrt">Anfahrt</a></nav>
+  <section class="w-hero" id="w-start"><div class="wrap">
+    <div class="w-card">
+      <h1>Ferienwohnung <em>Mühlbach</em></h1>
+      <p>Ruhige Wohnung im alten Fachwerkhaus, mit Terrasse zum Tal. Der Wald beginnt hinter dem Garten, das Gasthaus ist sechs Minuten zu Fuß.</p>
+      <div class="w-facts"><span><b>68 m²</b></span><span><b>2 – 4</b> Gäste</span><span><b>2</b> Schlafzimmer</span><span>ab <b>85 €</b> / Nacht</span></div>
+    </div>
+  </div></section>
+  <section class="c" id="w-wohnung"><div class="wrap">
+    <h2>Viel Holz, viel Licht, viel Ruhe</h2>
+    <p class="lede">Wir haben das Obergeschoss unseres Fachwerkhauses 2023 renoviert. Die alten Balken sind geblieben, dazu gibt es eine neue Küche, ein Bad mit bodengleicher Dusche und einen Holzofen für kühle Abende.</p>
+    <div class="w-gal">
+      <figure><img src="bilder/fw_wohn.jpg" alt="Wohnzimmer mit Holzbalken und Sofa"><figcaption>Wohnzimmer</figcaption></figure>
+      <figure><img src="bilder/fw_schlaf.jpg" alt="Schlafzimmer mit Doppelbett" loading="lazy"><figcaption>Schlafzimmer</figcaption></figure>
+      <figure><img src="bilder/fw_kueche.jpg" alt="Küche mit Esstisch" loading="lazy"><figcaption>Küche</figcaption></figure>
+    </div>
+    <h3 style="font:400 1.5rem 'DM Serif Display',Georgia,serif;margin:44px 0 10px">Ausstattung</h3>
+    <ul class="w-equip"><li><span>WLAN (Glasfaser)</span></li><li><span>Holzofen, Holz inklusive</span></li><li><span>Spülmaschine und Waschmaschine</span></li><li><span>Eigene Terrasse mit Blick ins Tal</span></li><li><span>Parkplatz direkt am Haus</span></li><li><span>Abschließbarer Fahrradraum mit Ladestrom</span></li><li><span>Bettwäsche und Handtücher inklusive</span></li><li><span>Kinderbett und Hochstuhl auf Wunsch</span></li></ul>
+  </div></section>
+  <section class="c" id="w-preise"><div class="wrap">
+    <h2>Was es kostet, wann es frei ist</h2>
+    <div class="w-prices">
+      <div>
+        <table class="w-tbl">
+          <tr><th>Zeitraum</th><th style="text-align:right">pro Nacht</th></tr>
+          <tr><td>Nebensaison<small>November bis März</small></td><td>85 €</td></tr>
+          <tr><td>Hauptsaison<small>April bis Oktober</small></td><td>98 €</td></tr>
+          <tr><td>Feiertage<small>Ostern, Pfingsten, Weihnachten, Silvester</small></td><td>110 €</td></tr>
+          <tr><td>Endreinigung<small>einmalig pro Aufenthalt</small></td><td>45 €</td></tr>
+        </table>
+        <p class="w-fine">Preise für 2 Personen, jede weitere Person 12 € pro Nacht. Mindestens 3 Nächte, ab 7 Nächten 10 % günstiger. Hund auf Anfrage.</p>
+      </div>
+      <div>
+        <div class="w-cal" id="w-cal"></div>
+        <div class="w-legend"><span><i></i>frei</span><span><i class="b"></i>belegt</span></div>
+        <p class="w-fine">Den Kalender pflegen wir selbst. Wenn Ihr Wunschtermin frei ist, schicken Sie uns einfach eine Anfrage.</p>
+      </div>
+    </div>
+  </div></section>
+  <section class="c" id="w-umgebung"><div class="wrap">
+    <h2>Alles Wichtige zu Fuß</h2>
+    <p class="lede">Das Auto kann stehen bleiben. So lange brauchen Sie zu Fuß von unserer Haustür:</p>
+    <div class="w-walk">
+      <h3>Gehminuten ab Haustür</h3>
+      <div class="w-scale" aria-hidden="true"><span class="dot home" style="left:0"></span><span class="dot" style="left:20.0%" title="Bäckerei Schäfer: 3 Min."></span><span class="dot" style="left:26.7%" title="Bushaltestelle „Ortsmitte“: 4 Min."></span><span class="dot" style="left:40.0%" title="Gasthaus zur Linde: 6 Min."></span><span class="dot" style="left:60.0%" title="Hofladen Sonnenhang: 9 Min."></span><span class="dot" style="left:80.0%" title="Badestelle am Mühlbach: 12 Min."></span><span class="dot" style="left:100.0%" title="Einstieg Wanderweg Burgblick: 15 Min."></span><span class="tick" style="left:0.0%">0 Min.</span><span class="tick" style="left:33.3%">5 Min.</span><span class="tick" style="left:66.7%">10 Min.</span><span class="tick" style="left:100.0%;transform:translateX(-100%)">15 Min.</span></div>
+      <ul class="w-places"><li><span>Bäckerei Schäfer<small>Frische Brötchen ab 6:30 Uhr, sonntags bis 11 Uhr</small></span><b>3 Min.</b></li><li><span>Bushaltestelle „Ortsmitte“<small>Linie 84 in die Stadt, stündlich</small></span><b>4 Min.</b></li><li><span><a href="#gasthaus" data-go="gasthaus">Gasthaus zur Linde</a><small>Fränkische Küche und Biergarten unter der Linde</small></span><b>6 Min.</b></li><li><span>Hofladen Sonnenhang<small>Eier, Wurst, Apfelsaft, Fr und Sa geöffnet</small></span><b>9 Min.</b></li><li><span>Badestelle am Mühlbach<small>Flache Stelle mit Liegewiese, ideal für Kinder</small></span><b>12 Min.</b></li><li><span>Einstieg Wanderweg Burgblick<small>Gelbe Markierung, direkt am Waldrand</small></span><b>15 Min.</b></li></ul>
+    </div>
+    <h3 style="font:400 1.6rem 'DM Serif Display',Georgia,serif;margin:0 0 18px">Ausflugsziele in der Nähe</h3>
+    <div class="w-tips"><figure class="w-tip"><img src="bilder/fw_burg.jpg" alt="Burgruine im Buchenwald" loading="lazy"><span class="km">15 Min. mit dem Auto</span><h3>Burgruine im Buchenwald</h3><p>Mauern aus rotem Sandstein mitten im Wald. Im Sommer finden hier Freilichtkonzerte statt.</p></figure><figure class="w-tip"><img src="bilder/fw_kloster.jpg" alt="Barockkloster mit Orgel" loading="lazy"><span class="km">20 Min. mit dem Auto</span><h3>Barockkloster mit Orgel</h3><p>Die Klosterkirche ist berühmt für ihre große Barockorgel. Orgelkonzerte gibt es von Mai bis Oktober.</p></figure><figure class="w-tip"><img src="bilder/fw_altstadt.jpg" alt="Fachwerk-Altstadt am Main" loading="lazy"><span class="km">25 Min. mit dem Auto</span><h3>Fachwerk-Altstadt am Main</h3><p>Bummeln durch enge Gassen, Eis essen am Marktplatz und abends ein Schoppen Wein.</p></figure><figure class="w-tip"><img src="bilder/fw_main.jpg" alt="Radweg am Main" loading="lazy"><span class="km">25 Min. mit dem Auto</span><h3>Radweg am Main</h3><p>Fast flach am Fluss entlang, vorbei an Weinbergen. Leihräder gibt es am Bahnhof.</p></figure></div>
+  </div></section>
+  <section class="c" id="w-wandern"><div class="wrap">
+    <h2>Drei Wege ab Haustür</h2>
+    <p class="lede">Alle Wege sind beschildert. Eine Wanderkarte liegt in der Wohnung, Lunchpakete packen wir Ihnen gern.</p>
+    <div class="w-trails"><article class="w-trail"><img src="bilder/fw_w1.jpg" alt="Burgblick-Runde"><div><h3>Burgblick-Runde<span class="w-level l">leicht</span></h3><p>Ab Haustür durch den Buchenwald hinauf zur Burgruine und über die Wiesen zurück. Einkehr im Gasthaus zur Linde möglich.</p><div class="w-stats"><span><b>7,4 km</b>Strecke</span><span><b>2:15 h</b>Gehzeit</span><span><b>180 m</b>bergauf</span><span><b>ab Haustür</b>Start</span></div><svg class="w-prof" data-prof="[310,330,360,395,430,455,470,462,440,410,380,350,330,312]" viewBox="0 0 300 64" preserveAspectRatio="none" role="img" aria-label="Höhenprofil Burgblick-Runde"></svg><div class="w-prof-l"><span>0 km</span><span>Höhenprofil</span><span>7,4 km</span></div></div></article><article class="w-trail"><img src="bilder/fw_w2.jpg" alt="Mühlbachtal-Weg"><div><h3>Mühlbachtal-Weg<span class="w-level l">leicht</span></h3><p>Gemütlich am Bach entlang bis zur alten Mühle, auch mit Kinderwagen machbar. Mit Badestelle unterwegs.</p><div class="w-stats"><span><b>5,1 km</b>Strecke</span><span><b>1:30 h</b>Gehzeit</span><span><b>60 m</b>bergauf</span><span><b>ab Haustür</b>Start</span></div><svg class="w-prof" data-prof="[300,302,306,310,315,318,322,326,330,328,322,314,306,300]" viewBox="0 0 300 64" preserveAspectRatio="none" role="img" aria-label="Höhenprofil Mühlbachtal-Weg"></svg><div class="w-prof-l"><span>0 km</span><span>Höhenprofil</span><span>5,1 km</span></div></div></article><article class="w-trail"><img src="bilder/fw_w3.jpg" alt="Höhenweg zum Aussichtsturm"><div><h3>Höhenweg zum Aussichtsturm<span class="w-level m">mittel</span></h3><p>Über zwei Bergrücken zum Holzturm mit Blick bis zum Main. Gute Schuhe und Wasser mitnehmen.</p><div class="w-stats"><span><b>12,8 km</b>Strecke</span><span><b>4:00 h</b>Gehzeit</span><span><b>420 m</b>bergauf</span><span><b>ab Haustür</b>Start</span></div><svg class="w-prof" data-prof="[310,360,410,450,430,470,520,555,540,500,470,420,360,312]" viewBox="0 0 300 64" preserveAspectRatio="none" role="img" aria-label="Höhenprofil Höhenweg zum Aussichtsturm"></svg><div class="w-prof-l"><span>0 km</span><span>Höhenprofil</span><span>12,8 km</span></div></div></article></div>
+  </div></section>
+  <section class="c" id="w-anfrage"><div class="wrap">
+    <h2>Unverbindlich anfragen</h2>
+    <p class="lede">Sie bekommen innerhalb eines Tages eine Antwort mit dem genauen Preis. Gebucht ist erst, wenn Sie zusagen.</p>
+    <form class="w-form" id="w-form">
+      <label>Anreise<input type="date" id="w-an"></label>
+      <label>Abreise<input type="date" id="w-ab"></label>
+      <label>Personen<select id="w-pers"><option>2 Erwachsene</option><option>2 Erwachsene, 1 Kind</option><option>2 Erwachsene, 2 Kinder</option><option>3 Erwachsene</option><option>4 Erwachsene</option></select></label>
+      <label>Name<input id="w-name" autocomplete="name" placeholder="Erika Musterfrau"></label>
+      <label class="full">E-Mail<input id="w-mail" type="email" autocomplete="email" placeholder="erika@beispiel.de"></label>
+      <label class="full">Nachricht<textarea id="w-msg" rows="3" placeholder="z. B. Wir kommen mit Hund und Fahrrädern."></textarea></label>
+      <button type="submit">Anfrage senden</button>
+      <p class="full" id="w-ok" hidden style="margin:0;font-weight:600">Beispielformular: Auf der echten Seite käme die Anfrage jetzt per E-Mail bei den Vermietern an.</p>
+    </form>
+  </div></section>
+  <section class="c" id="w-anfahrt"><div class="wrap">
+    <h2>So finden Sie zu uns</h2>
+    <div class="loc"><div class="map" data-label="Ferienwohnung Mühlbach"></div><div><b>Ferienwohnung Mühlbach</b><br>Familie Weber<br>Mühlweg 7<br>63930 Musterdorf<br><br>Parkplatz direkt am Haus. Mit der Bahn bis in die Nachbarstadt, wir holen Sie gern am Bahnhof ab.<br><a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Mühlweg+7,+63930+Musterdorf" target="_blank" rel="noopener"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route planen</a></div></div>
+  </div></section>
+  <footer class="bfoot"><div class="wrap"><div class="cols"><div><b>Ferienwohnung Mühlbach</b>Familie Weber<br>Mühlweg 7, 63930 Musterdorf</div><div><b>Anreise und Abreise</b>Anreise ab 15 Uhr<br>Abreise bis 10 Uhr</div><div><b>Kontakt</b>Tel. 0000 / 334455<br>urlaub@fewo-beispiel.de</div></div><div class="legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><span>Beispielseite von Jan Meixner. Name, Adresse und Preise sind erfunden, Fotos: Pexels (frei nutzbar).</span></div></div></footer>
+  <nav class="actbar" aria-label="Schnellkontakt"><a class="pri" href="tel:0000334455"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Anrufen</a><a href="#w-anfrage" data-jump><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Anfragen</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Mühlweg+7,+63930+Musterdorf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Route</a></nav>
+</div>
 </main>
 
-<footer>
-  <span>© 2026 Jan Meixner</span>
-</footer>
-
 <script>
-  // Karten gleiten beim Scrollen sanft an ihren Platz
-  const cards = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    cards.forEach(c => io.observe(c));
-  } else { cards.forEach(c => c.classList.add('in')); }
+(function(){
+  const tabs=[...document.querySelectorAll('.tab')];
+  const panels=Object.fromEntries([...document.querySelectorAll('.panel')].map(p=>[p.dataset.panel,p]));
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hdr=document.getElementById('top');
+  const setH=()=>document.documentElement.style.setProperty('--hdr',hdr.offsetHeight+'px');
+  setH(); addEventListener('resize',setH);
+  let current=null;
+  function show(name,push){
+    if(!panels[name]) name='ueber';
+    if(name===current) return;
+    tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.tab===name));
+    const next=panels[name], prev=current&&panels[current];
+    current=name;
+    const reveal=()=>{
+      next.hidden=false; next.classList.add('out');
+      window.scrollTo({top:0,behavior:'instant'});
+      requestAnimationFrame(()=>requestAnimationFrame(()=>next.classList.remove('out')));
+    };
+    if(prev&&!reduce){prev.classList.add('out');setTimeout(()=>{prev.hidden=true;prev.classList.remove('out');reveal()},200)}
+    else{if(prev)prev.hidden=true;reveal()}
+    if(push){try{history.replaceState(null,'','#'+name)}catch(e){}}
+    const t=tabs.find(t=>t.dataset.tab===name); t&&t.scrollIntoView({block:'nearest',inline:'nearest'});
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab,true)));
+  document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go,true)));
+  document.querySelectorAll('.subnav a, a[href^="#h-"]').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault(); const el=document.querySelector(a.getAttribute('href'));
+    el&&el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  }));
 
-  // aktiven Abschnitt in der Navigation markieren
-  const navLinks = [...document.querySelectorAll('.links a')];
-  const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));
-  const markActive = () => {
-    let current = null;
-    targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top < window.innerHeight * 0.4) current = i; });
-    navLinks.forEach((a, i) => a.classList.toggle('on', i === current));
-  };
-  addEventListener('scroll', markActive, { passive: true }); markActive();
+  // Stilisierte Karte (Platzhalter; auf der echten Seite kommt eine Google-Karte mit Einwilligung)
+  const mapSVG=label=>`<svg viewBox="0 0 600 340" role="img" aria-label="Kartenausschnitt: ${label}">
+    <rect width="600" height="340" fill="var(--m-bg)"/>
+    <path d="M-10 250 C120 220 180 300 300 270 S480 200 610 230 L610 270 C480 240 420 320 300 305 S110 260 -10 290Z" fill="var(--m-water)"/>
+    <rect x="40" y="30" width="120" height="80" rx="4" fill="var(--m-green)"/><rect x="430" y="40" width="140" height="70" rx="4" fill="var(--m-green)"/>
+    <g fill="var(--m-block)"><rect x="200" y="40" width="60" height="45"/><rect x="330" y="40" width="70" height="45"/><rect x="200" y="200" width="60" height="30"/><rect x="380" y="190" width="80" height="35"/><rect x="60" y="150" width="90" height="40"/><rect x="480" y="140" width="80" height="40"/></g>
+    <g stroke="var(--m-road)" stroke-linecap="round" fill="none"><path d="M-10 130 H610" stroke-width="16"/><path d="M290 -10 V350" stroke-width="12"/><path d="M180 -10 L170 350" stroke-width="7"/><path d="M420 -10 C430 120 400 200 470 350" stroke-width="7"/></g>
+    <circle cx="300" cy="150" r="36" fill="var(--m-pin)" opacity=".15"/>
+    <path d="M300 152 c-12-14-18-22-18-30 a18 18 0 0 1 36 0 c0 8-6 16-18 30z" fill="var(--m-pin)"/><circle cx="300" cy="122" r="6" fill="#fff"/>
+    <rect x="${300-label.length*4.2-12}" y="160" width="${label.length*8.4+24}" height="26" rx="4" fill="var(--m-pin)"/>
+    <text x="300" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">${label}</text>
+  </svg><small>Platzhalter: hier kommt die echte Karte hin</small>`;
+  document.querySelectorAll('.map').forEach(m=>m.innerHTML=mapSVG(m.dataset.label.replace(/&/g,'&amp;')));
+  document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault(); const el=document.querySelector(a.getAttribute('href'));
+    el&&el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  }));
 
-  // Hell/Dunkel umschalten
-  document.getElementById('theme').addEventListener('click', () => {
-    const root = document.documentElement;
-    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = dark ? 'light' : 'dark';
+  // Belegungskalender (Anzeige, pflegt der Vermieter)
+  (function(){
+    const cal=document.getElementById('w-cal'); if(!cal) return;
+    const months=[[2026,10,[[1,4],[12,16],[20,22]]],[2026,11,[[5,9],[23,31]]]];
+    const names=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+    cal.innerHTML=months.map(([y,m,booked])=>{
+      const first=(new Date(y,m,1).getDay()+6)%7, n=new Date(y,m+1,0).getDate();
+      const isB=d=>booked.some(([a,b])=>d>=a&&d<=b);
+      let h='<div class="w-month"><h3>'+names[m]+' '+y+'</h3><div class="w-days">'+['Mo','Di','Mi','Do','Fr','Sa','So'].map(x=>'<span class="h">'+x+'</span>').join('');
+      for(let i=0;i<first;i++) h+='<span class="e"></span>';
+      for(let d=1;d<=n;d++) h+='<span'+(isB(d)?' class="b" aria-label="'+d+'. belegt"':'')+'>'+d+'</span>';
+      return h+'</div></div>';
+    }).join('');
+  })();
+  // Höhenprofile der Wanderwege
+  document.querySelectorAll('.w-prof').forEach(svg=>{
+    const v=JSON.parse(svg.dataset.prof), lo=280, hi=580, W=300, H=64;
+    const pts=v.map((y,i)=>[i/(v.length-1)*W, H-4-(y-lo)/(hi-lo)*(H-8)]);
+    const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+    svg.innerHTML='<path d="'+d+' L'+W+' '+H+' L0 '+H+'Z" fill="#5d6b3f" opacity=".18"/><path d="'+d+'" fill="none" stroke="#5d6b3f" stroke-width="2" vector-effect="non-scaling-stroke"/>';
   });
+  document.getElementById('w-form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('w-ok').hidden=false});
+
+  // Wechselndes Wort in der Über-mich-Überschrift
+  (function(){
+    const el=document.getElementById('u-word'); if(!el||reduce) return;
+    const words=['Gasthäuser','Handwerker','Friseure','Praxen','Ferienwohnungen','Hofläden','Vereine'];
+    let i=0; setInterval(()=>{el.classList.add('swap');setTimeout(()=>{i=(i+1)%words.length;el.textContent=words[i];el.classList.remove('swap')},250)},2200);
+  })();
+  document.getElementById('h-form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('h-ok').hidden=false});
+  const h=(location.hash||'').slice(1);
+  show(panels[h]?h:(h==='schreinerei'?'handwerk':'ueber'),false);
+})();
 </script>
 </body>
 </html>
